@@ -74,13 +74,13 @@ open class DefaultAPI {
     }
 
     /**
-     - POST /integrations/watch-svc-go/add-account-watch
+     - POST /integrations/watch-svc-go/account-watches/
      - parameter accessToken: (header)  
      - parameter watch: (body)  
      - returns: RequestBuilder<AddAccountWatch201Response> 
      */
     open class func addAccountWatchWithRequestBuilder(accessToken: String, watch: Watch) -> RequestBuilder<AddAccountWatch201Response> {
-        let localVariablePath = "/integrations/watch-svc-go/add-account-watch"
+        let localVariablePath = "/integrations/watch-svc-go/account-watches/"
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
         let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: watch)
 
@@ -117,12 +117,12 @@ open class DefaultAPI {
     }
 
     /**
-     - POST /integrations/watch-svc-go/create-account
+     - POST /integrations/watch-svc-go/account
      - parameter createAccountRequest: (body)  
      - returns: RequestBuilder<AccountLogin200Response> 
      */
     open class func createAccountWithRequestBuilder(createAccountRequest: CreateAccountRequest) -> RequestBuilder<AccountLogin200Response> {
-        let localVariablePath = "/integrations/watch-svc-go/create-account"
+        let localVariablePath = "/integrations/watch-svc-go/account"
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
         let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: createAccountRequest)
 
@@ -158,13 +158,13 @@ open class DefaultAPI {
     }
 
     /**
-     - GET /integrations/watch-svc-go/get-account
+     - GET /integrations/watch-svc-go/account
      - Returns not ouath2 account, use it in the case when the account`s refresh token was expired
      - parameter accessToken: (header)  
      - returns: RequestBuilder<GetAccount200Response> 
      */
     open class func getAccountWithRequestBuilder(accessToken: String) -> RequestBuilder<GetAccount200Response> {
-        let localVariablePath = "/integrations/watch-svc-go/get-account"
+        let localVariablePath = "/integrations/watch-svc-go/account"
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
 
@@ -188,8 +188,8 @@ open class DefaultAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getAccountWatch(accessToken: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: GetAccountWatch200Response?, _ error: Error?) -> Void)) -> RequestTask {
-        return getAccountWatchWithRequestBuilder(accessToken: accessToken).execute(apiResponseQueue) { result in
+    open class func getAccountWatches(accessToken: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: GetAccountWatches200Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return getAccountWatchesWithRequestBuilder(accessToken: accessToken).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -200,12 +200,12 @@ open class DefaultAPI {
     }
 
     /**
-     - GET /integrations/watch-svcgo/get-account-watch
+     - GET /integrations/watch-svc-go/account-watches/
      - parameter accessToken: (header)  
-     - returns: RequestBuilder<GetAccountWatch200Response> 
+     - returns: RequestBuilder<GetAccountWatches200Response> 
      */
-    open class func getAccountWatchWithRequestBuilder(accessToken: String) -> RequestBuilder<GetAccountWatch200Response> {
-        let localVariablePath = "/integrations/watch-svcgo/get-account-watch"
+    open class func getAccountWatchesWithRequestBuilder(accessToken: String) -> RequestBuilder<GetAccountWatches200Response> {
+        let localVariablePath = "/integrations/watch-svc-go/account-watches/"
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
 
@@ -217,7 +217,7 @@ open class DefaultAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<GetAccountWatch200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GetAccountWatches200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
     }
@@ -324,13 +324,13 @@ open class DefaultAPI {
     }
 
     /**
-     - DELETE /integrations/watch-svc-go/remove-account-watch
+     - DELETE /integrations/watch-svc-go/account-watches/
      - parameter watchId: (query)  
      - parameter accessToken: (header)  
      - returns: RequestBuilder<Errors> 
      */
     open class func removeAccountWatchWithRequestBuilder(watchId: String, accessToken: String) -> RequestBuilder<Errors> {
-        let localVariablePath = "/integrations/watch-svc-go/remove-account-watch"
+        let localVariablePath = "/integrations/watch-svc-go/account-watches/"
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
 

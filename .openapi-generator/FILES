@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 .swiftformat
 Cartfile
 OpenAPIClient.podspec
@@ -17,13 +16,16 @@ OpenAPIClient/Classes/OpenAPIs/Models/AccountAllOfAttributes.swift
 OpenAPIClient/Classes/OpenAPIs/Models/AccountKey.swift
 OpenAPIClient/Classes/OpenAPIs/Models/AccountLogin200Response.swift
 OpenAPIClient/Classes/OpenAPIs/Models/AddAccountWatch201Response.swift
+OpenAPIClient/Classes/OpenAPIs/Models/Brand.swift
+OpenAPIClient/Classes/OpenAPIs/Models/BrandAllOfAttributes.swift
+OpenAPIClient/Classes/OpenAPIs/Models/BrandKey.swift
 OpenAPIClient/Classes/OpenAPIs/Models/CreateAccountRequest.swift
 OpenAPIClient/Classes/OpenAPIs/Models/CreateAccountRequestAllOfAttributes.swift
 OpenAPIClient/Classes/OpenAPIs/Models/CreateAccountRequestKey.swift
 OpenAPIClient/Classes/OpenAPIs/Models/Errors.swift
 OpenAPIClient/Classes/OpenAPIs/Models/ErrorsErrorsInner.swift
 OpenAPIClient/Classes/OpenAPIs/Models/GetAccount200Response.swift
-OpenAPIClient/Classes/OpenAPIs/Models/GetAccountWatch200Response.swift
+OpenAPIClient/Classes/OpenAPIs/Models/GetAccountWatches200Response.swift
 OpenAPIClient/Classes/OpenAPIs/Models/LoginAccountRequest.swift
 OpenAPIClient/Classes/OpenAPIs/Models/LoginAccountRequestAllOfAttributes.swift
 OpenAPIClient/Classes/OpenAPIs/Models/LoginAccountRequestKey.swift
@@ -45,6 +47,9 @@ docs/AccountAllOfAttributes.md
 docs/AccountKey.md
 docs/AccountLogin200Response.md
 docs/AddAccountWatch201Response.md
+docs/Brand.md
+docs/BrandAllOfAttributes.md
+docs/BrandKey.md
 docs/CreateAccountRequest.md
 docs/CreateAccountRequestAllOfAttributes.md
 docs/CreateAccountRequestKey.md
@@ -52,7 +57,7 @@ docs/DefaultAPI.md
 docs/Errors.md
 docs/ErrorsErrorsInner.md
 docs/GetAccount200Response.md
-docs/GetAccountWatch200Response.md
+docs/GetAccountWatches200Response.md
 docs/LoginAccountRequest.md
 docs/LoginAccountRequestAllOfAttributes.md
 docs/LoginAccountRequestKey.md

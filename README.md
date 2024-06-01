@@ -22,18 +22,18 @@ Run `pod install`
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://eb69-185-46-149-146.ngrok-free.app*
+All URIs are relative to *https://34c8-185-46-149-146.ngrok-free.app*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *DefaultAPI* | [**accountLogin**](docs/DefaultAPI.md#accountlogin) | **POST** /integrations/watch-svc-go/account-login | 
-*DefaultAPI* | [**addAccountWatch**](docs/DefaultAPI.md#addaccountwatch) | **POST** /integrations/watch-svc-go/add-account-watch | 
-*DefaultAPI* | [**createAccount**](docs/DefaultAPI.md#createaccount) | **POST** /integrations/watch-svc-go/create-account | 
-*DefaultAPI* | [**getAccount**](docs/DefaultAPI.md#getaccount) | **GET** /integrations/watch-svc-go/get-account | 
-*DefaultAPI* | [**getAccountWatch**](docs/DefaultAPI.md#getaccountwatch) | **GET** /integrations/watch-svcgo/get-account-watch | 
+*DefaultAPI* | [**addAccountWatch**](docs/DefaultAPI.md#addaccountwatch) | **POST** /integrations/watch-svc-go/account-watches/ | 
+*DefaultAPI* | [**createAccount**](docs/DefaultAPI.md#createaccount) | **POST** /integrations/watch-svc-go/account | 
+*DefaultAPI* | [**getAccount**](docs/DefaultAPI.md#getaccount) | **GET** /integrations/watch-svc-go/account | 
+*DefaultAPI* | [**getAccountWatches**](docs/DefaultAPI.md#getaccountwatches) | **GET** /integrations/watch-svc-go/account-watches/ | 
 *DefaultAPI* | [**googleSignIn**](docs/DefaultAPI.md#googlesignin) | **POST** /integrations/watch-svc-go/oauth2/google | 
 *DefaultAPI* | [**refreshReauth**](docs/DefaultAPI.md#refreshreauth) | **POST** /integrations/watch-svc-go/refresh-reauth | 
-*DefaultAPI* | [**removeAccountWatch**](docs/DefaultAPI.md#removeaccountwatch) | **DELETE** /integrations/watch-svc-go/remove-account-watch | 
+*DefaultAPI* | [**removeAccountWatch**](docs/DefaultAPI.md#removeaccountwatch) | **DELETE** /integrations/watch-svc-go/account-watches/ | 
 
 
 ## Documentation For Models
@@ -43,13 +43,16 @@ Class | Method | HTTP request | Description
  - [AccountKey](docs/AccountKey.md)
  - [AccountLogin200Response](docs/AccountLogin200Response.md)
  - [AddAccountWatch201Response](docs/AddAccountWatch201Response.md)
+ - [Brand](docs/Brand.md)
+ - [BrandAllOfAttributes](docs/BrandAllOfAttributes.md)
+ - [BrandKey](docs/BrandKey.md)
  - [CreateAccountRequest](docs/CreateAccountRequest.md)
  - [CreateAccountRequestAllOfAttributes](docs/CreateAccountRequestAllOfAttributes.md)
  - [CreateAccountRequestKey](docs/CreateAccountRequestKey.md)
  - [Errors](docs/Errors.md)
  - [ErrorsErrorsInner](docs/ErrorsErrorsInner.md)
  - [GetAccount200Response](docs/GetAccount200Response.md)
- - [GetAccountWatch200Response](docs/GetAccountWatch200Response.md)
+ - [GetAccountWatches200Response](docs/GetAccountWatches200Response.md)
  - [LoginAccountRequest](docs/LoginAccountRequest.md)
  - [LoginAccountRequestAllOfAttributes](docs/LoginAccountRequestAllOfAttributes.md)
  - [LoginAccountRequestKey](docs/LoginAccountRequestKey.md)
@@ -72,4 +75,3 @@ Endpoints do not require authorization.
 
 
 
-# watch-svc

@@ -3,17 +3,19 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**watchId** | **String** |  | 
-**name** | **String** |  | 
-**description** | **String** |  | 
-**price** | **String** |  | 
+**watchId** | **String** |  | [optional] 
+**photos** | **[String]** |  | 
+**reference** | **String** |  | [optional] 
+**model** | **String** |  | 
+**caseMaterial** | **String** |  | [optional] 
+**dialColor** | **String** |  | [optional] 
+**isWorn** | **Bool** |  | 
+**price** | **Double** |  | 
 **currency** | **String** |  | 
-**refNumber** | **String** |  | 
-**waterResistance** | **String** |  | 
-**gender** | **String** |  | 
-**family** | **String** |  | 
-**familyDescription** | **String** |  | 
-**photo** | **String** |  | 
+**equipment** | **String** |  | [optional] 
+**notes** | **String** |  | [optional] 
+**brand** | **String** |  | 
+**timestamp** | **Int64** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -9,7 +9,7 @@ import Foundation
 import FoundationNetworking
 #endif
 open class OpenAPIClientAPI {
-    public static var basePath = "https://eb69-185-46-149-146.ngrok-free.app"
+    public static var basePath = "https://34c8-185-46-149-146.ngrok-free.app"
     public static var customHeaders: [String: String] = [:]
     public static var credential: URLCredential?
     public static var requestBuilderFactory: RequestBuilderFactory = URLSessionRequestBuilderFactory()

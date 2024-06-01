@@ -1,17 +1,17 @@
 # DefaultAPI
 
-All URIs are relative to *https://eb69-185-46-149-146.ngrok-free.app*
+All URIs are relative to *https://34c8-185-46-149-146.ngrok-free.app*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**accountLogin**](DefaultAPI.md#accountlogin) | **POST** /integrations/watch-svc-go/account-login | 
-[**addAccountWatch**](DefaultAPI.md#addaccountwatch) | **POST** /integrations/watch-svc-go/add-account-watch | 
-[**createAccount**](DefaultAPI.md#createaccount) | **POST** /integrations/watch-svc-go/create-account | 
-[**getAccount**](DefaultAPI.md#getaccount) | **GET** /integrations/watch-svc-go/get-account | 
-[**getAccountWatch**](DefaultAPI.md#getaccountwatch) | **GET** /integrations/watch-svcgo/get-account-watch | 
+[**addAccountWatch**](DefaultAPI.md#addaccountwatch) | **POST** /integrations/watch-svc-go/account-watches/ | 
+[**createAccount**](DefaultAPI.md#createaccount) | **POST** /integrations/watch-svc-go/account | 
+[**getAccount**](DefaultAPI.md#getaccount) | **GET** /integrations/watch-svc-go/account | 
+[**getAccountWatches**](DefaultAPI.md#getaccountwatches) | **GET** /integrations/watch-svc-go/account-watches/ | 
 [**googleSignIn**](DefaultAPI.md#googlesignin) | **POST** /integrations/watch-svc-go/oauth2/google | 
 [**refreshReauth**](DefaultAPI.md#refreshreauth) | **POST** /integrations/watch-svc-go/refresh-reauth | 
-[**removeAccountWatch**](DefaultAPI.md#removeaccountwatch) | **DELETE** /integrations/watch-svc-go/remove-account-watch | 
+[**removeAccountWatch**](DefaultAPI.md#removeaccountwatch) | **DELETE** /integrations/watch-svc-go/account-watches/ | 
 
 
 # **accountLogin**
@@ -76,7 +76,7 @@ No authorization required
 import OpenAPIClient
 
 let accessToken = "accessToken_example" // String | 
-let watch = Watch(type: "type_example", relationships: Watch_allOf_relationships(accountId: "accountId_example"), attributes: Watch_allOf_attributes(watchId: "watchId_example", name: "name_example", description: "description_example", price: "price_example", currency: "currency_example", refNumber: "refNumber_example", waterResistance: "waterResistance_example", gender: "gender_example", family: "family_example", familyDescription: "familyDescription_example", photo: "photo_example")) // Watch | 
+let watch = Watch(type: "type_example", relationships: Watch_allOf_relationships(accountId: "accountId_example"), attributes: Watch_allOf_attributes(watchId: "watchId_example", photos: ["photos_example"], reference: "reference_example", model: "model_example", caseMaterial: "caseMaterial_example", dialColor: "dialColor_example", isWorn: false, price: 123, currency: "currency_example", equipment: "equipment_example", notes: "notes_example", brand: "brand_example", timestamp: 123)) // Watch | 
 
 DefaultAPI.addAccountWatch(accessToken: accessToken, watch: watch) { (response, error) in
     guard error == nil else {
@@ -208,9 +208,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **getAccountWatch**
+# **getAccountWatches**
 ```swift
-    open class func getAccountWatch(accessToken: String, completion: @escaping (_ data: GetAccountWatch200Response?, _ error: Error?) -> Void)
+    open class func getAccountWatches(accessToken: String, completion: @escaping (_ data: GetAccountWatches200Response?, _ error: Error?) -> Void)
 ```
 
 
@@ -222,7 +222,7 @@ import OpenAPIClient
 
 let accessToken = "accessToken_example" // String | 
 
-DefaultAPI.getAccountWatch(accessToken: accessToken) { (response, error) in
+DefaultAPI.getAccountWatches(accessToken: accessToken) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetAccountWatch200Response**](GetAccountWatch200Response.md)
+[**GetAccountWatches200Response**](GetAccountWatches200Response.md)
 
 ### Authorization
 
