@@ -351,7 +351,7 @@ No authorization required
 
 # **removeAccountWatch**
 ```swift
-    open class func removeAccountWatch(watchId: String, accessToken: String, completion: @escaping (_ data: Errors?, _ error: Error?) -> Void)
+    open class func removeAccountWatch(watchId: String, accessToken: String, completion: @escaping (_ data: Void?, _ error: Error?) -> Void)
 ```
 
 
@@ -385,7 +385,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Errors**](Errors.md)
+Void (empty response body)
 
 ### Authorization
 
@@ -394,7 +394,7 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/json
+ - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

@@ -312,11 +312,11 @@ open class DefaultAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func removeAccountWatch(watchId: String, accessToken: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: Errors?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func removeAccountWatch(watchId: String, accessToken: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: Void?, _ error: Error?) -> Void)) -> RequestTask {
         return removeAccountWatchWithRequestBuilder(watchId: watchId, accessToken: accessToken).execute(apiResponseQueue) { result in
             switch result {
-            case let .success(response):
-                completion(response.body, nil)
+            case .success:
+                completion((), nil)
             case let .failure(error):
                 completion(nil, error)
             }
@@ -327,9 +327,9 @@ open class DefaultAPI {
      - DELETE /integrations/watch-svc-go/account-watches/
      - parameter watchId: (query)  
      - parameter accessToken: (header)  
-     - returns: RequestBuilder<Errors> 
+     - returns: RequestBuilder<Void> 
      */
-    open class func removeAccountWatchWithRequestBuilder(watchId: String, accessToken: String) -> RequestBuilder<Errors> {
+    open class func removeAccountWatchWithRequestBuilder(watchId: String, accessToken: String) -> RequestBuilder<Void> {
         let localVariablePath = "/integrations/watch-svc-go/account-watches/"
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -345,7 +345,7 @@ open class DefaultAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<Errors>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<Void>.Type = OpenAPIClientAPI.requestBuilderFactory.getNonDecodableBuilder()
 
         return localVariableRequestBuilder.init(method: "DELETE", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
     }
