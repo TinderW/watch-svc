@@ -32,6 +32,7 @@ OpenAPIClient/Classes/OpenAPIs/Models/LoginAccountRequestKey.swift
 OpenAPIClient/Classes/OpenAPIs/Models/SignInResponse.swift
 OpenAPIClient/Classes/OpenAPIs/Models/SignInResponseAllOfAttributes.swift
 OpenAPIClient/Classes/OpenAPIs/Models/SignInResponseKey.swift
+OpenAPIClient/Classes/OpenAPIs/Models/UpdateAccountWatch201Response.swift
 OpenAPIClient/Classes/OpenAPIs/Models/Watch.swift
 OpenAPIClient/Classes/OpenAPIs/Models/WatchAllOfAttributes.swift
 OpenAPIClient/Classes/OpenAPIs/Models/WatchAllOfRelationships.swift
@@ -64,6 +65,7 @@ docs/LoginAccountRequestKey.md
 docs/SignInResponse.md
 docs/SignInResponseAllOfAttributes.md
 docs/SignInResponseKey.md
+docs/UpdateAccountWatch201Response.md
 docs/Watch.md
 docs/WatchAllOfAttributes.md
 docs/WatchAllOfRelationships.md

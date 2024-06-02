@@ -1,6 +1,6 @@
 # DefaultAPI
 
-All URIs are relative to *https://34c8-185-46-149-146.ngrok-free.app*
+All URIs are relative to *https://ec2-54-167-37-239.compute-1.amazonaws.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**googleSignIn**](DefaultAPI.md#googlesignin) | **POST** /integrations/watch-svc-go/oauth2/google | 
 [**refreshReauth**](DefaultAPI.md#refreshreauth) | **POST** /integrations/watch-svc-go/refresh-reauth | 
 [**removeAccountWatch**](DefaultAPI.md#removeaccountwatch) | **DELETE** /integrations/watch-svc-go/account-watches/ | 
+[**updateAccountWatch**](DefaultAPI.md#updateaccountwatch) | **PUT** /integrations/watch-svc-go/account-watches/ | 
 
 
 # **accountLogin**
@@ -395,6 +396,55 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **updateAccountWatch**
+```swift
+    open class func updateAccountWatch(accessToken: String, watch: Watch, completion: @escaping (_ data: UpdateAccountWatch201Response?, _ error: Error?) -> Void)
+```
+
+
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OpenAPIClient
+
+let accessToken = "accessToken_example" // String | 
+let watch = Watch(type: "type_example", relationships: Watch_allOf_relationships(accountId: "accountId_example"), attributes: Watch_allOf_attributes(watchId: "watchId_example", photos: ["photos_example"], reference: "reference_example", model: "model_example", caseMaterial: "caseMaterial_example", dialColor: "dialColor_example", isWorn: false, price: 123, currency: "currency_example", equipment: "equipment_example", notes: "notes_example", brand: "brand_example", timestamp: 123)) // Watch | 
+
+DefaultAPI.updateAccountWatch(accessToken: accessToken, watch: watch) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String** |  | 
+ **watch** | [**Watch**](Watch.md) |  | 
+
+### Return type
+
+[**UpdateAccountWatch201Response**](UpdateAccountWatch201Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

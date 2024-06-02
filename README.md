@@ -22,7 +22,7 @@ Run `pod install`
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://34c8-185-46-149-146.ngrok-free.app*
+All URIs are relative to *https://ec2-54-167-37-239.compute-1.amazonaws.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -34,6 +34,7 @@ Class | Method | HTTP request | Description
 *DefaultAPI* | [**googleSignIn**](docs/DefaultAPI.md#googlesignin) | **POST** /integrations/watch-svc-go/oauth2/google | 
 *DefaultAPI* | [**refreshReauth**](docs/DefaultAPI.md#refreshreauth) | **POST** /integrations/watch-svc-go/refresh-reauth | 
 *DefaultAPI* | [**removeAccountWatch**](docs/DefaultAPI.md#removeaccountwatch) | **DELETE** /integrations/watch-svc-go/account-watches/ | 
+*DefaultAPI* | [**updateAccountWatch**](docs/DefaultAPI.md#updateaccountwatch) | **PUT** /integrations/watch-svc-go/account-watches/ | 
 
 
 ## Documentation For Models
@@ -59,6 +60,7 @@ Class | Method | HTTP request | Description
  - [SignInResponse](docs/SignInResponse.md)
  - [SignInResponseAllOfAttributes](docs/SignInResponseAllOfAttributes.md)
  - [SignInResponseKey](docs/SignInResponseKey.md)
+ - [UpdateAccountWatch201Response](docs/UpdateAccountWatch201Response.md)
  - [Watch](docs/Watch.md)
  - [WatchAllOfAttributes](docs/WatchAllOfAttributes.md)
  - [WatchAllOfRelationships](docs/WatchAllOfRelationships.md)
