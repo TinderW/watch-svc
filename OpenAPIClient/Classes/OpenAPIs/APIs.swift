@@ -9,7 +9,7 @@ import Foundation
 import FoundationNetworking
 #endif
 open class OpenAPIClientAPI {
-    public static var basePath = "https://54.167.37.239.sslip.io"
+    public static var basePath = "https://34.227.206.94.sslip.io"
     public static var customHeaders: [String: String] = [:]
     public static var credential: URLCredential?
     public static var requestBuilderFactory: RequestBuilderFactory = URLSessionRequestBuilderFactory()
