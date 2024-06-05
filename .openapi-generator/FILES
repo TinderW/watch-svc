@@ -29,6 +29,8 @@ OpenAPIClient/Classes/OpenAPIs/Models/GetAccountWatches200Response.swift
 OpenAPIClient/Classes/OpenAPIs/Models/LoginAccountRequest.swift
 OpenAPIClient/Classes/OpenAPIs/Models/LoginAccountRequestAllOfAttributes.swift
 OpenAPIClient/Classes/OpenAPIs/Models/LoginAccountRequestKey.swift
+OpenAPIClient/Classes/OpenAPIs/Models/SearchBrands200Response.swift
+OpenAPIClient/Classes/OpenAPIs/Models/SearchWatches200Response.swift
 OpenAPIClient/Classes/OpenAPIs/Models/SignInResponse.swift
 OpenAPIClient/Classes/OpenAPIs/Models/SignInResponseAllOfAttributes.swift
 OpenAPIClient/Classes/OpenAPIs/Models/SignInResponseKey.swift
@@ -62,6 +64,8 @@ docs/GetAccountWatches200Response.md
 docs/LoginAccountRequest.md
 docs/LoginAccountRequestAllOfAttributes.md
 docs/LoginAccountRequestKey.md
+docs/SearchBrands200Response.md
+docs/SearchWatches200Response.md
 docs/SignInResponse.md
 docs/SignInResponseAllOfAttributes.md
 docs/SignInResponseKey.md

@@ -352,6 +352,98 @@ open class DefaultAPI {
 
     /**
 
+     - parameter search: (query)  
+     - parameter apiResponseQueue: The queue on which api response is dispatched.
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    @discardableResult
+    open class func searchBrands(search: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: SearchBrands200Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return searchBrandsWithRequestBuilder(search: search).execute(apiResponseQueue) { result in
+            switch result {
+            case let .success(response):
+                completion(response.body, nil)
+            case let .failure(error):
+                completion(nil, error)
+            }
+        }
+    }
+
+    /**
+     - GET /integrations/watch-svc-go/brand/search
+     - searcch brands
+     - parameter search: (query)  
+     - returns: RequestBuilder<SearchBrands200Response> 
+     */
+    open class func searchBrandsWithRequestBuilder(search: String) -> RequestBuilder<SearchBrands200Response> {
+        let localVariablePath = "/integrations/watch-svc-go/brand/search"
+        let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
+        let localVariableParameters: [String: Any]? = nil
+
+        var localVariableUrlComponents = URLComponents(string: localVariableURLString)
+        localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
+            "search": (wrappedValue: search.encodeToJSON(), isExplode: true),
+        ])
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            :
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<SearchBrands200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
+    }
+
+    /**
+
+     - parameter accessToken: (header)  
+     - parameter search: (query)  
+     - parameter apiResponseQueue: The queue on which api response is dispatched.
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    @discardableResult
+    open class func searchWatches(accessToken: String, search: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: SearchWatches200Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return searchWatchesWithRequestBuilder(accessToken: accessToken, search: search).execute(apiResponseQueue) { result in
+            switch result {
+            case let .success(response):
+                completion(response.body, nil)
+            case let .failure(error):
+                completion(nil, error)
+            }
+        }
+    }
+
+    /**
+     - GET /integrations/watch-svc-go/watches
+     - returns searched watches with account
+     - parameter accessToken: (header)  
+     - parameter search: (query)  
+     - returns: RequestBuilder<SearchWatches200Response> 
+     */
+    open class func searchWatchesWithRequestBuilder(accessToken: String, search: String) -> RequestBuilder<SearchWatches200Response> {
+        let localVariablePath = "/integrations/watch-svc-go/watches"
+        let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
+        let localVariableParameters: [String: Any]? = nil
+
+        var localVariableUrlComponents = URLComponents(string: localVariableURLString)
+        localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
+            "search": (wrappedValue: search.encodeToJSON(), isExplode: true),
+        ])
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            "access-token": accessToken.encodeToJSON(),
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<SearchWatches200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
+    }
+
+    /**
+
      - parameter accessToken: (header)  
      - parameter watch: (body)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.

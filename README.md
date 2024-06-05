@@ -22,7 +22,7 @@ Run `pod install`
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://ec2-54-167-37-239.compute-1.amazonaws.com*
+All URIs are relative to *https://34.227.206.94.sslip.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
@@ -34,6 +34,8 @@ Class | Method | HTTP request | Description
 *DefaultAPI* | [**googleSignIn**](docs/DefaultAPI.md#googlesignin) | **POST** /integrations/watch-svc-go/oauth2/google | 
 *DefaultAPI* | [**refreshReauth**](docs/DefaultAPI.md#refreshreauth) | **POST** /integrations/watch-svc-go/refresh-reauth | 
 *DefaultAPI* | [**removeAccountWatch**](docs/DefaultAPI.md#removeaccountwatch) | **DELETE** /integrations/watch-svc-go/account-watches/ | 
+*DefaultAPI* | [**searchBrands**](docs/DefaultAPI.md#searchbrands) | **GET** /integrations/watch-svc-go/brand/search | 
+*DefaultAPI* | [**searchWatches**](docs/DefaultAPI.md#searchwatches) | **GET** /integrations/watch-svc-go/watches | 
 *DefaultAPI* | [**updateAccountWatch**](docs/DefaultAPI.md#updateaccountwatch) | **PUT** /integrations/watch-svc-go/account-watches/ | 
 
 
@@ -57,6 +59,8 @@ Class | Method | HTTP request | Description
  - [LoginAccountRequest](docs/LoginAccountRequest.md)
  - [LoginAccountRequestAllOfAttributes](docs/LoginAccountRequestAllOfAttributes.md)
  - [LoginAccountRequestKey](docs/LoginAccountRequestKey.md)
+ - [SearchBrands200Response](docs/SearchBrands200Response.md)
+ - [SearchWatches200Response](docs/SearchWatches200Response.md)
  - [SignInResponse](docs/SignInResponse.md)
  - [SignInResponseAllOfAttributes](docs/SignInResponseAllOfAttributes.md)
  - [SignInResponseKey](docs/SignInResponseKey.md)
