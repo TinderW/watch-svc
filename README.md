@@ -34,6 +34,7 @@ Class | Method | HTTP request | Description
 *DefaultAPI* | [**googleSignIn**](docs/DefaultAPI.md#googlesignin) | **POST** /integrations/watch-svc-go/oauth2/google | 
 *DefaultAPI* | [**refreshReauth**](docs/DefaultAPI.md#refreshreauth) | **POST** /integrations/watch-svc-go/refresh-reauth | 
 *DefaultAPI* | [**removeAccountWatch**](docs/DefaultAPI.md#removeaccountwatch) | **DELETE** /integrations/watch-svc-go/account-watches/ | 
+*DefaultAPI* | [**searchAccounts**](docs/DefaultAPI.md#searchaccounts) | **GET** /integrations/watch-svc-go/account/search | 
 *DefaultAPI* | [**searchBrands**](docs/DefaultAPI.md#searchbrands) | **GET** /integrations/watch-svc-go/brand/search | 
 *DefaultAPI* | [**searchWatches**](docs/DefaultAPI.md#searchwatches) | **GET** /integrations/watch-svc-go/watches | 
 *DefaultAPI* | [**updateAccountWatch**](docs/DefaultAPI.md#updateaccountwatch) | **PUT** /integrations/watch-svc-go/account-watches/ | 
@@ -59,6 +60,7 @@ Class | Method | HTTP request | Description
  - [LoginAccountRequest](docs/LoginAccountRequest.md)
  - [LoginAccountRequestAllOfAttributes](docs/LoginAccountRequestAllOfAttributes.md)
  - [LoginAccountRequestKey](docs/LoginAccountRequestKey.md)
+ - [SearchAccounts200Response](docs/SearchAccounts200Response.md)
  - [SearchBrands200Response](docs/SearchBrands200Response.md)
  - [SearchWatches200Response](docs/SearchWatches200Response.md)
  - [SignInResponse](docs/SignInResponse.md)

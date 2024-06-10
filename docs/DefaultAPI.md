@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**googleSignIn**](DefaultAPI.md#googlesignin) | **POST** /integrations/watch-svc-go/oauth2/google | 
 [**refreshReauth**](DefaultAPI.md#refreshreauth) | **POST** /integrations/watch-svc-go/refresh-reauth | 
 [**removeAccountWatch**](DefaultAPI.md#removeaccountwatch) | **DELETE** /integrations/watch-svc-go/account-watches/ | 
+[**searchAccounts**](DefaultAPI.md#searchaccounts) | **GET** /integrations/watch-svc-go/account/search | 
 [**searchBrands**](DefaultAPI.md#searchbrands) | **GET** /integrations/watch-svc-go/brand/search | 
 [**searchWatches**](DefaultAPI.md#searchwatches) | **GET** /integrations/watch-svc-go/watches | 
 [**updateAccountWatch**](DefaultAPI.md#updateaccountwatch) | **PUT** /integrations/watch-svc-go/account-watches/ | 
@@ -24,7 +25,7 @@ Method | HTTP request | Description
 
 
 
-Returns not ouath2 account, use it in the case when the account`s refresh token was expired
+Returns not ouath2 account, usex it in the case when the account`s refresh token was expired
 
 ### Example
 ```swift
@@ -164,7 +165,7 @@ No authorization required
 
 # **getAccount**
 ```swift
-    open class func getAccount(accessToken: String, completion: @escaping (_ data: GetAccount200Response?, _ error: Error?) -> Void)
+    open class func getAccount(accessToken: String, account: String? = nil, completion: @escaping (_ data: GetAccount200Response?, _ error: Error?) -> Void)
 ```
 
 
@@ -177,8 +178,9 @@ Returns not ouath2 account, use it in the case when the account`s refresh token 
 import OpenAPIClient
 
 let accessToken = "accessToken_example" // String | 
+let account = "account_example" // String |  (optional)
 
-DefaultAPI.getAccount(accessToken: accessToken) { (response, error) in
+DefaultAPI.getAccount(accessToken: accessToken, account: account) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -195,6 +197,7 @@ DefaultAPI.getAccount(accessToken: accessToken) { (response, error) in
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String** |  | 
+ **account** | **String** |  | [optional] 
 
 ### Return type
 
@@ -398,6 +401,57 @@ No authorization required
 
  - **Content-Type**: Not defined
  - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **searchAccounts**
+```swift
+    open class func searchAccounts(accessToken: String, search: String, completion: @escaping (_ data: SearchAccounts200Response?, _ error: Error?) -> Void)
+```
+
+
+
+search accounts
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OpenAPIClient
+
+let accessToken = "accessToken_example" // String | 
+let search = "search_example" // String | 
+
+DefaultAPI.searchAccounts(accessToken: accessToken, search: search) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String** |  | 
+ **search** | **String** |  | 
+
+### Return type
+
+[**SearchAccounts200Response**](SearchAccounts200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 

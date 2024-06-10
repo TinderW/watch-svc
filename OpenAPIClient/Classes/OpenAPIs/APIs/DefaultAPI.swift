@@ -32,7 +32,7 @@ open class DefaultAPI {
 
     /**
      - POST /integrations/watch-svc-go/account-login
-     - Returns not ouath2 account, use it in the case when the account`s refresh token was expired
+     - Returns not ouath2 account, usex it in the case when the account`s refresh token was expired
      - parameter loginAccountRequest: (body)  
      - returns: RequestBuilder<AccountLogin200Response> 
      */
@@ -142,12 +142,13 @@ open class DefaultAPI {
     /**
 
      - parameter accessToken: (header)  
+     - parameter account: (query)  (optional)
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getAccount(accessToken: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: GetAccount200Response?, _ error: Error?) -> Void)) -> RequestTask {
-        return getAccountWithRequestBuilder(accessToken: accessToken).execute(apiResponseQueue) { result in
+    open class func getAccount(accessToken: String, account: String? = nil, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: GetAccount200Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return getAccountWithRequestBuilder(accessToken: accessToken, account: account).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -161,14 +162,18 @@ open class DefaultAPI {
      - GET /integrations/watch-svc-go/account
      - Returns not ouath2 account, use it in the case when the account`s refresh token was expired
      - parameter accessToken: (header)  
+     - parameter account: (query)  (optional)
      - returns: RequestBuilder<GetAccount200Response> 
      */
-    open class func getAccountWithRequestBuilder(accessToken: String) -> RequestBuilder<GetAccount200Response> {
+    open class func getAccountWithRequestBuilder(accessToken: String, account: String? = nil) -> RequestBuilder<GetAccount200Response> {
         let localVariablePath = "/integrations/watch-svc-go/account"
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
 
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+        var localVariableUrlComponents = URLComponents(string: localVariableURLString)
+        localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
+            "account": (wrappedValue: account?.encodeToJSON(), isExplode: true),
+        ])
 
         let localVariableNillableHeaders: [String: Any?] = [
             "access-token": accessToken.encodeToJSON(),
@@ -348,6 +353,53 @@ open class DefaultAPI {
         let localVariableRequestBuilder: RequestBuilder<Void>.Type = OpenAPIClientAPI.requestBuilderFactory.getNonDecodableBuilder()
 
         return localVariableRequestBuilder.init(method: "DELETE", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
+    }
+
+    /**
+
+     - parameter accessToken: (header)  
+     - parameter search: (query)  
+     - parameter apiResponseQueue: The queue on which api response is dispatched.
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    @discardableResult
+    open class func searchAccounts(accessToken: String, search: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: SearchAccounts200Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return searchAccountsWithRequestBuilder(accessToken: accessToken, search: search).execute(apiResponseQueue) { result in
+            switch result {
+            case let .success(response):
+                completion(response.body, nil)
+            case let .failure(error):
+                completion(nil, error)
+            }
+        }
+    }
+
+    /**
+     - GET /integrations/watch-svc-go/account/search
+     - search accounts
+     - parameter accessToken: (header)  
+     - parameter search: (query)  
+     - returns: RequestBuilder<SearchAccounts200Response> 
+     */
+    open class func searchAccountsWithRequestBuilder(accessToken: String, search: String) -> RequestBuilder<SearchAccounts200Response> {
+        let localVariablePath = "/integrations/watch-svc-go/account/search"
+        let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
+        let localVariableParameters: [String: Any]? = nil
+
+        var localVariableUrlComponents = URLComponents(string: localVariableURLString)
+        localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
+            "search": (wrappedValue: search.encodeToJSON(), isExplode: true),
+        ])
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            "access-token": accessToken.encodeToJSON(),
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<SearchAccounts200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
     }
 
     /**
