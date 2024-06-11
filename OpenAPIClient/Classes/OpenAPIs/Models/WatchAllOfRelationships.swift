@@ -13,13 +13,16 @@ import AnyCodable
 public struct WatchAllOfRelationships: Codable, JSONEncodable, Hashable {
 
     public var accountId: String?
+    public var brandId: String?
 
-    public init(accountId: String? = nil) {
+    public init(accountId: String? = nil, brandId: String? = nil) {
         self.accountId = accountId
+        self.brandId = brandId
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case accountId = "account_id"
+        case brandId = "brand_id"
     }
 
     // Encodable protocol methods
@@ -27,6 +30,7 @@ public struct WatchAllOfRelationships: Codable, JSONEncodable, Hashable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encodeIfPresent(accountId, forKey: .accountId)
+        try container.encodeIfPresent(brandId, forKey: .brandId)
     }
 }
 
