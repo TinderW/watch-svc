@@ -37,7 +37,6 @@ Class | Method | HTTP request | Description
 *DefaultAPI* | [**searchAccounts**](docs/DefaultAPI.md#searchaccounts) | **GET** /integrations/watch-svc-go/account/search | 
 *DefaultAPI* | [**searchBrands**](docs/DefaultAPI.md#searchbrands) | **GET** /integrations/watch-svc-go/brand/search | 
 *DefaultAPI* | [**searchWatches**](docs/DefaultAPI.md#searchwatches) | **GET** /integrations/watch-svc-go/watches | 
-*DefaultAPI* | [**syncAccountWatches**](docs/DefaultAPI.md#syncaccountwatches) | **POST** /integrations/watch-svc-go/account-watches/sync | 
 *DefaultAPI* | [**updateAccountWatch**](docs/DefaultAPI.md#updateaccountwatch) | **PUT** /integrations/watch-svc-go/account-watches/ | 
 
 
@@ -65,14 +64,6 @@ Class | Method | HTTP request | Description
  - [SignInResponse](docs/SignInResponse.md)
  - [SignInResponseAllOfAttributes](docs/SignInResponseAllOfAttributes.md)
  - [SignInResponseKey](docs/SignInResponseKey.md)
- - [SyncAccountWatchItem](docs/SyncAccountWatchItem.md)
- - [SyncAccountWatches](docs/SyncAccountWatches.md)
- - [SyncAccountWatches200Response](docs/SyncAccountWatches200Response.md)
- - [SyncAccountWatchesAllOfAttributes](docs/SyncAccountWatchesAllOfAttributes.md)
- - [SyncAccountWatchesRequest](docs/SyncAccountWatchesRequest.md)
- - [SyncAccountWatchesRequestAllOfAttributes](docs/SyncAccountWatchesRequestAllOfAttributes.md)
- - [SyncAccountWatchesRequestKey](docs/SyncAccountWatchesRequestKey.md)
- - [SyncAccountWatchesResponseKey](docs/SyncAccountWatchesResponseKey.md)
  - [UpdateAccountWatch201Response](docs/UpdateAccountWatch201Response.md)
  - [Watch](docs/Watch.md)
  - [WatchAllOfAttributes](docs/WatchAllOfAttributes.md)

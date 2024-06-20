@@ -189,12 +189,13 @@ open class DefaultAPI {
     /**
 
      - parameter accessToken: (header)  
+     - parameter account: (query)  (optional)
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getAccountWatches(accessToken: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: GetAccountWatches200Response?, _ error: Error?) -> Void)) -> RequestTask {
-        return getAccountWatchesWithRequestBuilder(accessToken: accessToken).execute(apiResponseQueue) { result in
+    open class func getAccountWatches(accessToken: String, account: String? = nil, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: GetAccountWatches200Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return getAccountWatchesWithRequestBuilder(accessToken: accessToken, account: account).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -207,14 +208,18 @@ open class DefaultAPI {
     /**
      - GET /integrations/watch-svc-go/account-watches/
      - parameter accessToken: (header)  
+     - parameter account: (query)  (optional)
      - returns: RequestBuilder<GetAccountWatches200Response> 
      */
-    open class func getAccountWatchesWithRequestBuilder(accessToken: String) -> RequestBuilder<GetAccountWatches200Response> {
+    open class func getAccountWatchesWithRequestBuilder(accessToken: String, account: String? = nil) -> RequestBuilder<GetAccountWatches200Response> {
         let localVariablePath = "/integrations/watch-svc-go/account-watches/"
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
 
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+        var localVariableUrlComponents = URLComponents(string: localVariableURLString)
+        localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
+            "account": (wrappedValue: account?.encodeToJSON(), isExplode: true),
+        ])
 
         let localVariableNillableHeaders: [String: Any?] = [
             "access-token": accessToken.encodeToJSON(),
@@ -492,50 +497,6 @@ open class DefaultAPI {
         let localVariableRequestBuilder: RequestBuilder<GetAccountWatches200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
-    }
-
-    /**
-
-     - parameter accessToken: (header)  
-     - parameter syncAccountWatchesRequest: (body)  
-     - parameter apiResponseQueue: The queue on which api response is dispatched.
-     - parameter completion: completion handler to receive the data and the error objects
-     */
-    @discardableResult
-    open class func syncAccountWatches(accessToken: String, syncAccountWatchesRequest: SyncAccountWatchesRequest, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: SyncAccountWatches200Response?, _ error: Error?) -> Void)) -> RequestTask {
-        return syncAccountWatchesWithRequestBuilder(accessToken: accessToken, syncAccountWatchesRequest: syncAccountWatchesRequest).execute(apiResponseQueue) { result in
-            switch result {
-            case let .success(response):
-                completion(response.body, nil)
-            case let .failure(error):
-                completion(nil, error)
-            }
-        }
-    }
-
-    /**
-     - POST /integrations/watch-svc-go/account-watches/sync
-     - parameter accessToken: (header)  
-     - parameter syncAccountWatchesRequest: (body)  
-     - returns: RequestBuilder<SyncAccountWatches200Response> 
-     */
-    open class func syncAccountWatchesWithRequestBuilder(accessToken: String, syncAccountWatchesRequest: SyncAccountWatchesRequest) -> RequestBuilder<SyncAccountWatches200Response> {
-        let localVariablePath = "/integrations/watch-svc-go/account-watches/sync"
-        let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: syncAccountWatchesRequest)
-
-        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
-
-        let localVariableNillableHeaders: [String: Any?] = [
-            "Content-Type": "application/json",
-            "access-token": accessToken.encodeToJSON(),
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<SyncAccountWatches200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
     }
 
     /**

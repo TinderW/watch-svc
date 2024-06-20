@@ -16,16 +16,13 @@ public struct WatchKey: Codable, JSONEncodable, Hashable {
         case watch = "watch"
     }
     public var type: ModelType
-    public var id: String
 
-    public init(type: ModelType, id: String) {
+    public init(type: ModelType) {
         self.type = type
-        self.id = id
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case type
-        case id
     }
 
     // Encodable protocol methods
@@ -33,7 +30,6 @@ public struct WatchKey: Codable, JSONEncodable, Hashable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(type, forKey: .type)
-        try container.encode(id, forKey: .id)
     }
 }
 
