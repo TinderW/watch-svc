@@ -4,6 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **type** | **String** |  | 
+**id** | **String** |  | 
 **relationships** | [**WatchAllOfRelationships**](WatchAllOfRelationships.md) |  | [optional] 
 **attributes** | [**WatchAllOfAttributes**](WatchAllOfAttributes.md) |  | 
 

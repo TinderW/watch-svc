@@ -15,6 +15,7 @@ Method | HTTP request | Description
 [**searchAccounts**](DefaultAPI.md#searchaccounts) | **GET** /integrations/watch-svc-go/account/search | 
 [**searchBrands**](DefaultAPI.md#searchbrands) | **GET** /integrations/watch-svc-go/brand/search | 
 [**searchWatches**](DefaultAPI.md#searchwatches) | **GET** /integrations/watch-svc-go/watches | 
+[**syncAccountWatches**](DefaultAPI.md#syncaccountwatches) | **POST** /integrations/watch-svc-go/account-watches/sync | 
 [**updateAccountWatch**](DefaultAPI.md#updateaccountwatch) | **PUT** /integrations/watch-svc-go/account-watches/ | 
 
 
@@ -80,7 +81,7 @@ No authorization required
 import OpenAPIClient
 
 let accessToken = "accessToken_example" // String | 
-let watch = Watch(type: "type_example", relationships: Watch_allOf_relationships(accountId: "accountId_example", brandId: "brandId_example"), attributes: Watch_allOf_attributes(watchId: "watchId_example", photos: ["photos_example"], reference: "reference_example", model: "model_example", caseMaterial: "caseMaterial_example", dialColor: "dialColor_example", isWorn: false, price: 123, currency: "currency_example", equipment: "equipment_example", notes: "notes_example", brand: "brand_example", timestamp: 123)) // Watch | 
+let watch = Watch(type: "type_example", id: "id_example", relationships: Watch_allOf_relationships(accountId: "accountId_example", brandId: "brandId_example"), attributes: Watch_allOf_attributes(watchId: "watchId_example", photos: ["photos_example"], reference: "reference_example", model: "model_example", caseMaterial: "caseMaterial_example", dialColor: "dialColor_example", isWorn: false, price: 123, currency: "currency_example", equipment: "equipment_example", notes: "notes_example", brand: "brand_example", timestamp: 123)) // Watch | 
 
 DefaultAPI.addAccountWatch(accessToken: accessToken, watch: watch) { (response, error) in
     guard error == nil else {
@@ -557,6 +558,55 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **syncAccountWatches**
+```swift
+    open class func syncAccountWatches(accessToken: String, syncAccountWatchesRequest: SyncAccountWatchesRequest, completion: @escaping (_ data: SyncAccountWatches200Response?, _ error: Error?) -> Void)
+```
+
+
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OpenAPIClient
+
+let accessToken = "accessToken_example" // String | 
+let syncAccountWatchesRequest = SyncAccountWatchesRequest(type: "type_example", id: "id_example", attributes: SyncAccountWatchesRequest_allOf_attributes(watches: [SyncAccountWatchItem(watchId: "watchId_example", timestamp: 123)])) // SyncAccountWatchesRequest | 
+
+DefaultAPI.syncAccountWatches(accessToken: accessToken, syncAccountWatchesRequest: syncAccountWatchesRequest) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String** |  | 
+ **syncAccountWatchesRequest** | [**SyncAccountWatchesRequest**](SyncAccountWatchesRequest.md) |  | 
+
+### Return type
+
+[**SyncAccountWatches200Response**](SyncAccountWatches200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **updateAccountWatch**
 ```swift
     open class func updateAccountWatch(accessToken: String, watch: Watch, completion: @escaping (_ data: UpdateAccountWatch201Response?, _ error: Error?) -> Void)
@@ -570,7 +620,7 @@ No authorization required
 import OpenAPIClient
 
 let accessToken = "accessToken_example" // String | 
-let watch = Watch(type: "type_example", relationships: Watch_allOf_relationships(accountId: "accountId_example", brandId: "brandId_example"), attributes: Watch_allOf_attributes(watchId: "watchId_example", photos: ["photos_example"], reference: "reference_example", model: "model_example", caseMaterial: "caseMaterial_example", dialColor: "dialColor_example", isWorn: false, price: 123, currency: "currency_example", equipment: "equipment_example", notes: "notes_example", brand: "brand_example", timestamp: 123)) // Watch | 
+let watch = Watch(type: "type_example", id: "id_example", relationships: Watch_allOf_relationships(accountId: "accountId_example", brandId: "brandId_example"), attributes: Watch_allOf_attributes(watchId: "watchId_example", photos: ["photos_example"], reference: "reference_example", model: "model_example", caseMaterial: "caseMaterial_example", dialColor: "dialColor_example", isWorn: false, price: 123, currency: "currency_example", equipment: "equipment_example", notes: "notes_example", brand: "brand_example", timestamp: 123)) // Watch | 
 
 DefaultAPI.updateAccountWatch(accessToken: accessToken, watch: watch) { (response, error) in
     guard error == nil else {

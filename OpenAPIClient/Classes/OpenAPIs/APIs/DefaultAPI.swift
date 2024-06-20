@@ -502,6 +502,50 @@ open class DefaultAPI {
     /**
 
      - parameter accessToken: (header)  
+     - parameter syncAccountWatchesRequest: (body)  
+     - parameter apiResponseQueue: The queue on which api response is dispatched.
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    @discardableResult
+    open class func syncAccountWatches(accessToken: String, syncAccountWatchesRequest: SyncAccountWatchesRequest, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: SyncAccountWatches200Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return syncAccountWatchesWithRequestBuilder(accessToken: accessToken, syncAccountWatchesRequest: syncAccountWatchesRequest).execute(apiResponseQueue) { result in
+            switch result {
+            case let .success(response):
+                completion(response.body, nil)
+            case let .failure(error):
+                completion(nil, error)
+            }
+        }
+    }
+
+    /**
+     - POST /integrations/watch-svc-go/account-watches/sync
+     - parameter accessToken: (header)  
+     - parameter syncAccountWatchesRequest: (body)  
+     - returns: RequestBuilder<SyncAccountWatches200Response> 
+     */
+    open class func syncAccountWatchesWithRequestBuilder(accessToken: String, syncAccountWatchesRequest: SyncAccountWatchesRequest) -> RequestBuilder<SyncAccountWatches200Response> {
+        let localVariablePath = "/integrations/watch-svc-go/account-watches/sync"
+        let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: syncAccountWatchesRequest)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            "Content-Type": "application/json",
+            "access-token": accessToken.encodeToJSON(),
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<SyncAccountWatches200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
+    }
+
+    /**
+
+     - parameter accessToken: (header)  
      - parameter watch: (body)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
