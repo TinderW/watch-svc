@@ -25,8 +25,9 @@ public struct WatchAllOfAttributes: Codable, JSONEncodable, Hashable {
     public var notes: String?
     public var brand: String
     public var timestamp: Int64?
+    public var isSwapping: Bool?
 
-    public init(watchId: String? = nil, photos: [String], reference: String? = nil, model: String, caseMaterial: String? = nil, dialColor: String? = nil, isWorn: Bool, price: Double, currency: String, equipment: String? = nil, notes: String? = nil, brand: String, timestamp: Int64? = nil) {
+    public init(watchId: String? = nil, photos: [String], reference: String? = nil, model: String, caseMaterial: String? = nil, dialColor: String? = nil, isWorn: Bool, price: Double, currency: String, equipment: String? = nil, notes: String? = nil, brand: String, timestamp: Int64? = nil, isSwapping: Bool? = nil) {
         self.watchId = watchId
         self.photos = photos
         self.reference = reference
@@ -40,6 +41,7 @@ public struct WatchAllOfAttributes: Codable, JSONEncodable, Hashable {
         self.notes = notes
         self.brand = brand
         self.timestamp = timestamp
+        self.isSwapping = isSwapping
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
@@ -56,6 +58,7 @@ public struct WatchAllOfAttributes: Codable, JSONEncodable, Hashable {
         case notes
         case brand
         case timestamp
+        case isSwapping
     }
 
     // Encodable protocol methods
@@ -75,6 +78,7 @@ public struct WatchAllOfAttributes: Codable, JSONEncodable, Hashable {
         try container.encodeIfPresent(notes, forKey: .notes)
         try container.encode(brand, forKey: .brand)
         try container.encodeIfPresent(timestamp, forKey: .timestamp)
+        try container.encodeIfPresent(isSwapping, forKey: .isSwapping)
     }
 }
 

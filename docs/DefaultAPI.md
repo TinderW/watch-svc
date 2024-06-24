@@ -81,7 +81,7 @@ No authorization required
 import OpenAPIClient
 
 let accessToken = "accessToken_example" // String | 
-let watch = Watch(type: "type_example", id: "id_example", relationships: Watch_allOf_relationships(accountId: "accountId_example", brandId: "brandId_example"), attributes: Watch_allOf_attributes(watchId: "watchId_example", photos: ["photos_example"], reference: "reference_example", model: "model_example", caseMaterial: "caseMaterial_example", dialColor: "dialColor_example", isWorn: false, price: 123, currency: "currency_example", equipment: "equipment_example", notes: "notes_example", brand: "brand_example", timestamp: 123)) // Watch | 
+let watch = Watch(type: "type_example", id: "id_example", relationships: Watch_allOf_relationships(accountId: "accountId_example", brandId: "brandId_example"), attributes: Watch_allOf_attributes(watchId: "watchId_example", photos: ["photos_example"], reference: "reference_example", model: "model_example", caseMaterial: "caseMaterial_example", dialColor: "dialColor_example", isWorn: false, price: 123, currency: "currency_example", equipment: "equipment_example", notes: "notes_example", brand: "brand_example", timestamp: 123, isSwapping: false)) // Watch | 
 
 DefaultAPI.addAccountWatch(accessToken: accessToken, watch: watch) { (response, error) in
     guard error == nil else {
@@ -620,7 +620,7 @@ No authorization required
 import OpenAPIClient
 
 let accessToken = "accessToken_example" // String | 
-let watch = Watch(type: "type_example", id: "id_example", relationships: Watch_allOf_relationships(accountId: "accountId_example", brandId: "brandId_example"), attributes: Watch_allOf_attributes(watchId: "watchId_example", photos: ["photos_example"], reference: "reference_example", model: "model_example", caseMaterial: "caseMaterial_example", dialColor: "dialColor_example", isWorn: false, price: 123, currency: "currency_example", equipment: "equipment_example", notes: "notes_example", brand: "brand_example", timestamp: 123)) // Watch | 
+let watch = Watch(type: "type_example", id: "id_example", relationships: Watch_allOf_relationships(accountId: "accountId_example", brandId: "brandId_example"), attributes: Watch_allOf_attributes(watchId: "watchId_example", photos: ["photos_example"], reference: "reference_example", model: "model_example", caseMaterial: "caseMaterial_example", dialColor: "dialColor_example", isWorn: false, price: 123, currency: "currency_example", equipment: "equipment_example", notes: "notes_example", brand: "brand_example", timestamp: 123, isSwapping: false)) // Watch | 
 
 DefaultAPI.updateAccountWatch(accessToken: accessToken, watch: watch) { (response, error) in
     guard error == nil else {
