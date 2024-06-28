@@ -1,4 +1,4 @@
-# AccountKey
+# SwapOfferKey
 
 ## Properties
 Name | Type | Description | Notes

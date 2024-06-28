@@ -29,14 +29,18 @@ Class | Method | HTTP request | Description
 *DefaultAPI* | [**accountLogin**](docs/DefaultAPI.md#accountlogin) | **POST** /integrations/watch-svc-go/account-login | 
 *DefaultAPI* | [**addAccountWatch**](docs/DefaultAPI.md#addaccountwatch) | **POST** /integrations/watch-svc-go/account-watches/ | 
 *DefaultAPI* | [**createAccount**](docs/DefaultAPI.md#createaccount) | **POST** /integrations/watch-svc-go/account | 
+*DefaultAPI* | [**createSwapOffer**](docs/DefaultAPI.md#createswapoffer) | **POST** /integrations/watch-svc-go/swap-offer | 
 *DefaultAPI* | [**getAccount**](docs/DefaultAPI.md#getaccount) | **GET** /integrations/watch-svc-go/account | 
 *DefaultAPI* | [**getAccountWatches**](docs/DefaultAPI.md#getaccountwatches) | **GET** /integrations/watch-svc-go/account-watches/ | 
+*DefaultAPI* | [**getUserSwapOffers**](docs/DefaultAPI.md#getuserswapoffers) | **GET** /integrations/watch-svc-go/swap-offer | 
+*DefaultAPI* | [**getWatchesByIds**](docs/DefaultAPI.md#getwatchesbyids) | **GET** /integrations/watch-svc-go/watches/ids | 
 *DefaultAPI* | [**googleSignIn**](docs/DefaultAPI.md#googlesignin) | **POST** /integrations/watch-svc-go/oauth2/google | 
 *DefaultAPI* | [**refreshReauth**](docs/DefaultAPI.md#refreshreauth) | **POST** /integrations/watch-svc-go/refresh-reauth | 
 *DefaultAPI* | [**removeAccountWatch**](docs/DefaultAPI.md#removeaccountwatch) | **DELETE** /integrations/watch-svc-go/account-watches/ | 
 *DefaultAPI* | [**searchAccounts**](docs/DefaultAPI.md#searchaccounts) | **GET** /integrations/watch-svc-go/account/search | 
 *DefaultAPI* | [**searchBrands**](docs/DefaultAPI.md#searchbrands) | **GET** /integrations/watch-svc-go/brand/search | 
 *DefaultAPI* | [**searchWatches**](docs/DefaultAPI.md#searchwatches) | **GET** /integrations/watch-svc-go/watches | 
+*DefaultAPI* | [**setSwapOfferStatus**](docs/DefaultAPI.md#setswapofferstatus) | **PUT** /integrations/watch-svc-go/swap-offer | 
 *DefaultAPI* | [**syncAccountWatches**](docs/DefaultAPI.md#syncaccountwatches) | **POST** /integrations/watch-svc-go/account-watches/sync | 
 *DefaultAPI* | [**updateAccountWatch**](docs/DefaultAPI.md#updateaccountwatch) | **PUT** /integrations/watch-svc-go/account-watches/ | 
 
@@ -53,18 +57,26 @@ Class | Method | HTTP request | Description
  - [CreateAccountRequest](docs/CreateAccountRequest.md)
  - [CreateAccountRequestAllOfAttributes](docs/CreateAccountRequestAllOfAttributes.md)
  - [CreateAccountRequestKey](docs/CreateAccountRequestKey.md)
+ - [CreateSwapOffer200Response](docs/CreateSwapOffer200Response.md)
  - [Errors](docs/Errors.md)
  - [ErrorsErrorsInner](docs/ErrorsErrorsInner.md)
  - [GetAccount200Response](docs/GetAccount200Response.md)
  - [GetAccountWatches200Response](docs/GetAccountWatches200Response.md)
+ - [GetUserSwapOffers200Response](docs/GetUserSwapOffers200Response.md)
+ - [GetUserSwapOffers200ResponseIncludedInner](docs/GetUserSwapOffers200ResponseIncludedInner.md)
  - [LoginAccountRequest](docs/LoginAccountRequest.md)
  - [LoginAccountRequestAllOfAttributes](docs/LoginAccountRequestAllOfAttributes.md)
  - [LoginAccountRequestKey](docs/LoginAccountRequestKey.md)
  - [SearchAccounts200Response](docs/SearchAccounts200Response.md)
  - [SearchBrands200Response](docs/SearchBrands200Response.md)
+ - [SetSwapOfferStatus200Response](docs/SetSwapOfferStatus200Response.md)
  - [SignInResponse](docs/SignInResponse.md)
  - [SignInResponseAllOfAttributes](docs/SignInResponseAllOfAttributes.md)
  - [SignInResponseKey](docs/SignInResponseKey.md)
+ - [SwapOffer](docs/SwapOffer.md)
+ - [SwapOfferAllOfAttributes](docs/SwapOfferAllOfAttributes.md)
+ - [SwapOfferAllOfRelationships](docs/SwapOfferAllOfRelationships.md)
+ - [SwapOfferKey](docs/SwapOfferKey.md)
  - [SyncAccountWatchItem](docs/SyncAccountWatchItem.md)
  - [SyncAccountWatches](docs/SyncAccountWatches.md)
  - [SyncAccountWatches200Response](docs/SyncAccountWatches200Response.md)
