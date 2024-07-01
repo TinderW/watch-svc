@@ -19,7 +19,9 @@ Method | HTTP request | Description
 [**searchBrands**](DefaultAPI.md#searchbrands) | **GET** /integrations/watch-svc-go/brand/search | 
 [**searchWatches**](DefaultAPI.md#searchwatches) | **GET** /integrations/watch-svc-go/watches | 
 [**setSwapOfferStatus**](DefaultAPI.md#setswapofferstatus) | **PUT** /integrations/watch-svc-go/swap-offer | 
+[**setWatchSwapStatus**](DefaultAPI.md#setwatchswapstatus) | **POST** /integrations/watch-svc-go/watches/swap | 
 [**syncAccountWatches**](DefaultAPI.md#syncaccountwatches) | **POST** /integrations/watch-svc-go/account-watches/sync | 
+[**syncSwapOffers**](DefaultAPI.md#syncswapoffers) | **POST** /integrations/watch-svc-go/swap-offer/sync | 
 [**updateAccountWatch**](DefaultAPI.md#updateaccountwatch) | **PUT** /integrations/watch-svc-go/account-watches/ | 
 
 
@@ -766,6 +768,59 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **setWatchSwapStatus**
+```swift
+    open class func setWatchSwapStatus(swapStatus: Bool, accessToken: String, watchId: String, completion: @escaping (_ data: SetWatchSwapStatus200Response?, _ error: Error?) -> Void)
+```
+
+
+
+setSwapstatus
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OpenAPIClient
+
+let swapStatus = true // Bool | 
+let accessToken = "accessToken_example" // String | 
+let watchId = "watchId_example" // String | 
+
+DefaultAPI.setWatchSwapStatus(swapStatus: swapStatus, accessToken: accessToken, watchId: watchId) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **swapStatus** | **Bool** |  | 
+ **accessToken** | **String** |  | 
+ **watchId** | **String** |  | 
+
+### Return type
+
+[**SetWatchSwapStatus200Response**](SetWatchSwapStatus200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **syncAccountWatches**
 ```swift
     open class func syncAccountWatches(accessToken: String, syncAccountWatchesRequest: SyncAccountWatchesRequest, completion: @escaping (_ data: SyncAccountWatches200Response?, _ error: Error?) -> Void)
@@ -803,6 +858,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SyncAccountWatches200Response**](SyncAccountWatches200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **syncSwapOffers**
+```swift
+    open class func syncSwapOffers(accessToken: String, swapStatus: [SwapStatus], completion: @escaping (_ data: SyncSwapOffers200Response?, _ error: Error?) -> Void)
+```
+
+
+
+sync swapOffers
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OpenAPIClient
+
+let accessToken = "accessToken_example" // String | 
+let swapStatus = [SwapStatus(type: "type_example", id: "id_example", attributes: SwapStatus_allOf_attributes(swapStatus: false, timestamp: 123))] // [SwapStatus] | 
+
+DefaultAPI.syncSwapOffers(accessToken: accessToken, swapStatus: swapStatus) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String** |  | 
+ **swapStatus** | [**[SwapStatus]**](SwapStatus.md) |  | 
+
+### Return type
+
+[**SyncSwapOffers200Response**](SyncSwapOffers200Response.md)
 
 ### Authorization
 

@@ -41,7 +41,9 @@ Class | Method | HTTP request | Description
 *DefaultAPI* | [**searchBrands**](docs/DefaultAPI.md#searchbrands) | **GET** /integrations/watch-svc-go/brand/search | 
 *DefaultAPI* | [**searchWatches**](docs/DefaultAPI.md#searchwatches) | **GET** /integrations/watch-svc-go/watches | 
 *DefaultAPI* | [**setSwapOfferStatus**](docs/DefaultAPI.md#setswapofferstatus) | **PUT** /integrations/watch-svc-go/swap-offer | 
+*DefaultAPI* | [**setWatchSwapStatus**](docs/DefaultAPI.md#setwatchswapstatus) | **POST** /integrations/watch-svc-go/watches/swap | 
 *DefaultAPI* | [**syncAccountWatches**](docs/DefaultAPI.md#syncaccountwatches) | **POST** /integrations/watch-svc-go/account-watches/sync | 
+*DefaultAPI* | [**syncSwapOffers**](docs/DefaultAPI.md#syncswapoffers) | **POST** /integrations/watch-svc-go/swap-offer/sync | 
 *DefaultAPI* | [**updateAccountWatch**](docs/DefaultAPI.md#updateaccountwatch) | **PUT** /integrations/watch-svc-go/account-watches/ | 
 
 
@@ -70,6 +72,7 @@ Class | Method | HTTP request | Description
  - [SearchAccounts200Response](docs/SearchAccounts200Response.md)
  - [SearchBrands200Response](docs/SearchBrands200Response.md)
  - [SetSwapOfferStatus200Response](docs/SetSwapOfferStatus200Response.md)
+ - [SetWatchSwapStatus200Response](docs/SetWatchSwapStatus200Response.md)
  - [SignInResponse](docs/SignInResponse.md)
  - [SignInResponseAllOfAttributes](docs/SignInResponseAllOfAttributes.md)
  - [SignInResponseKey](docs/SignInResponseKey.md)
@@ -77,6 +80,12 @@ Class | Method | HTTP request | Description
  - [SwapOfferAllOfAttributes](docs/SwapOfferAllOfAttributes.md)
  - [SwapOfferAllOfRelationships](docs/SwapOfferAllOfRelationships.md)
  - [SwapOfferKey](docs/SwapOfferKey.md)
+ - [SwapStatus](docs/SwapStatus.md)
+ - [SwapStatusAllOfAttributes](docs/SwapStatusAllOfAttributes.md)
+ - [SwapStatusKey](docs/SwapStatusKey.md)
+ - [SyncAccountSwapOffers](docs/SyncAccountSwapOffers.md)
+ - [SyncAccountSwapOffersAllOfAttributes](docs/SyncAccountSwapOffersAllOfAttributes.md)
+ - [SyncAccountSwapOffersKey](docs/SyncAccountSwapOffersKey.md)
  - [SyncAccountWatchItem](docs/SyncAccountWatchItem.md)
  - [SyncAccountWatches](docs/SyncAccountWatches.md)
  - [SyncAccountWatches200Response](docs/SyncAccountWatches200Response.md)
@@ -85,6 +94,7 @@ Class | Method | HTTP request | Description
  - [SyncAccountWatchesRequestAllOfAttributes](docs/SyncAccountWatchesRequestAllOfAttributes.md)
  - [SyncAccountWatchesRequestKey](docs/SyncAccountWatchesRequestKey.md)
  - [SyncAccountWatchesResponseKey](docs/SyncAccountWatchesResponseKey.md)
+ - [SyncSwapOffers200Response](docs/SyncSwapOffers200Response.md)
  - [UpdateAccountWatch201Response](docs/UpdateAccountWatch201Response.md)
  - [Watch](docs/Watch.md)
  - [WatchAllOfAttributes](docs/WatchAllOfAttributes.md)
