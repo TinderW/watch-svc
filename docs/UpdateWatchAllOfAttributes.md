@@ -1,4 +1,4 @@
-# WatchAllOfAttributes
+# UpdateWatchAllOfAttributes
 
 ## Properties
 Name | Type | Description | Notes
@@ -14,8 +14,6 @@ Name | Type | Description | Notes
 **equipment** | **String** |  | [optional] 
 **notes** | **String** |  | [optional] 
 **brand** | **String** |  | 
-**timestamp** | **Int64** |  | 
-**isSwapping** | **Bool** |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

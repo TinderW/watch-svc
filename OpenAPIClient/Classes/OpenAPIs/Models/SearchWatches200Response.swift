@@ -13,9 +13,9 @@ import AnyCodable
 public struct SearchWatches200Response: Codable, JSONEncodable, Hashable {
 
     public var data: [Watch]?
-    public var included: [Account]?
+    public var included: [Brand]?
 
-    public init(data: [Watch]? = nil, included: [Account]? = nil) {
+    public init(data: [Watch]? = nil, included: [Brand]? = nil) {
         self.data = data
         self.included = included
     }

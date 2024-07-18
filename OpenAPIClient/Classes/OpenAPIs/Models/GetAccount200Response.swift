@@ -12,9 +12,9 @@ import AnyCodable
 
 public struct GetAccount200Response: Codable, JSONEncodable, Hashable {
 
-    public var data: Account?
+    public var data: Account
 
-    public init(data: Account? = nil) {
+    public init(data: Account) {
         self.data = data
     }
 
@@ -26,7 +26,7 @@ public struct GetAccount200Response: Codable, JSONEncodable, Hashable {
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(data, forKey: .data)
+        try container.encode(data, forKey: .data)
     }
 }
 

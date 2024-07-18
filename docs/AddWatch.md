@@ -1,9 +1,11 @@
-# GetAccountWatch200Response
+# AddWatch
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [Watch] |  | [optional] 
+**type** | **String** |  | 
+**id** | **String** |  | 
+**attributes** | [**AddWatchAllOfAttributes**](AddWatchAllOfAttributes.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

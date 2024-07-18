@@ -57,13 +57,13 @@ open class DefaultAPI {
     /**
 
      - parameter accessToken: (header)  
-     - parameter watch: (body)  
+     - parameter addWatch: (body)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func addAccountWatch(accessToken: String, watch: Watch, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: UpdateAccountWatch201Response?, _ error: Error?) -> Void)) -> RequestTask {
-        return addAccountWatchWithRequestBuilder(accessToken: accessToken, watch: watch).execute(apiResponseQueue) { result in
+    open class func addAccountWatch(accessToken: String, addWatch: AddWatch, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: UpdateAccountWatch200Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return addAccountWatchWithRequestBuilder(accessToken: accessToken, addWatch: addWatch).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -76,13 +76,13 @@ open class DefaultAPI {
     /**
      - POST /integrations/watch-svc-go/account-watches/
      - parameter accessToken: (header)  
-     - parameter watch: (body)  
-     - returns: RequestBuilder<UpdateAccountWatch201Response> 
+     - parameter addWatch: (body)  
+     - returns: RequestBuilder<UpdateAccountWatch200Response> 
      */
-    open class func addAccountWatchWithRequestBuilder(accessToken: String, watch: Watch) -> RequestBuilder<UpdateAccountWatch201Response> {
+    open class func addAccountWatchWithRequestBuilder(accessToken: String, addWatch: AddWatch) -> RequestBuilder<UpdateAccountWatch200Response> {
         let localVariablePath = "/integrations/watch-svc-go/account-watches/"
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: watch)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: addWatch)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -93,7 +93,7 @@ open class DefaultAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<UpdateAccountWatch201Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateAccountWatch200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
     }
@@ -327,7 +327,7 @@ open class DefaultAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getWatchesByIds(accessToken: String, watchId: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: GetAccountWatches200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func getWatchesByIds(accessToken: String, watchId: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: SearchWatches200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return getWatchesByIdsWithRequestBuilder(accessToken: accessToken, watchId: watchId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -343,9 +343,9 @@ open class DefaultAPI {
      - return watches from passed ids
      - parameter accessToken: (header)  
      - parameter watchId: (query)  
-     - returns: RequestBuilder<GetAccountWatches200Response> 
+     - returns: RequestBuilder<SearchWatches200Response> 
      */
-    open class func getWatchesByIdsWithRequestBuilder(accessToken: String, watchId: String) -> RequestBuilder<GetAccountWatches200Response> {
+    open class func getWatchesByIdsWithRequestBuilder(accessToken: String, watchId: String) -> RequestBuilder<SearchWatches200Response> {
         let localVariablePath = "/integrations/watch-svc-go/watches/ids"
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -361,7 +361,7 @@ open class DefaultAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<GetAccountWatches200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<SearchWatches200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
     }
@@ -594,7 +594,7 @@ open class DefaultAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func searchWatches(accessToken: String, search: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: GetAccountWatches200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func searchWatches(accessToken: String, search: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: SearchWatches200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return searchWatchesWithRequestBuilder(accessToken: accessToken, search: search).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -610,9 +610,9 @@ open class DefaultAPI {
      - returns searched watches with account
      - parameter accessToken: (header)  
      - parameter search: (query)  
-     - returns: RequestBuilder<GetAccountWatches200Response> 
+     - returns: RequestBuilder<SearchWatches200Response> 
      */
-    open class func searchWatchesWithRequestBuilder(accessToken: String, search: String) -> RequestBuilder<GetAccountWatches200Response> {
+    open class func searchWatchesWithRequestBuilder(accessToken: String, search: String) -> RequestBuilder<SearchWatches200Response> {
         let localVariablePath = "/integrations/watch-svc-go/watches"
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -628,7 +628,7 @@ open class DefaultAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<GetAccountWatches200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<SearchWatches200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
     }
@@ -825,13 +825,13 @@ open class DefaultAPI {
     /**
 
      - parameter accessToken: (header)  
-     - parameter watch: (body)  
+     - parameter updateWatch: (body)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func updateAccountWatch(accessToken: String, watch: Watch, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: UpdateAccountWatch201Response?, _ error: Error?) -> Void)) -> RequestTask {
-        return updateAccountWatchWithRequestBuilder(accessToken: accessToken, watch: watch).execute(apiResponseQueue) { result in
+    open class func updateAccountWatch(accessToken: String, updateWatch: UpdateWatch, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: UpdateAccountWatch200Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return updateAccountWatchWithRequestBuilder(accessToken: accessToken, updateWatch: updateWatch).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -844,13 +844,13 @@ open class DefaultAPI {
     /**
      - PUT /integrations/watch-svc-go/account-watches/
      - parameter accessToken: (header)  
-     - parameter watch: (body)  
-     - returns: RequestBuilder<UpdateAccountWatch201Response> 
+     - parameter updateWatch: (body)  
+     - returns: RequestBuilder<UpdateAccountWatch200Response> 
      */
-    open class func updateAccountWatchWithRequestBuilder(accessToken: String, watch: Watch) -> RequestBuilder<UpdateAccountWatch201Response> {
+    open class func updateAccountWatchWithRequestBuilder(accessToken: String, updateWatch: UpdateWatch) -> RequestBuilder<UpdateAccountWatch200Response> {
         let localVariablePath = "/integrations/watch-svc-go/account-watches/"
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
-        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: watch)
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: updateWatch)
 
         let localVariableUrlComponents = URLComponents(string: localVariableURLString)
 
@@ -861,7 +861,7 @@ open class DefaultAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<UpdateAccountWatch201Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<UpdateAccountWatch200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
     }

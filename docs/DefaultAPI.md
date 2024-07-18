@@ -76,7 +76,7 @@ No authorization required
 
 # **addAccountWatch**
 ```swift
-    open class func addAccountWatch(accessToken: String, watch: Watch, completion: @escaping (_ data: UpdateAccountWatch201Response?, _ error: Error?) -> Void)
+    open class func addAccountWatch(accessToken: String, addWatch: AddWatch, completion: @escaping (_ data: UpdateAccountWatch200Response?, _ error: Error?) -> Void)
 ```
 
 
@@ -87,9 +87,9 @@ No authorization required
 import OpenAPIClient
 
 let accessToken = "accessToken_example" // String | 
-let watch = Watch(type: "type_example", id: "id_example", relationships: Watch_allOf_relationships(accountId: "accountId_example", brandId: "brandId_example"), attributes: Watch_allOf_attributes(watchId: "watchId_example", photos: ["photos_example"], reference: "reference_example", model: "model_example", caseMaterial: "caseMaterial_example", dialColor: "dialColor_example", isWorn: false, price: 123, currency: "currency_example", equipment: "equipment_example", notes: "notes_example", brand: "brand_example", timestamp: 123, isSwapping: false)) // Watch | 
+let addWatch = AddWatch(type: "type_example", id: "id_example", attributes: AddWatch_allOf_attributes(photos: ["photos_example"], reference: "reference_example", model: "model_example", caseMaterial: "caseMaterial_example", dialColor: "dialColor_example", isWorn: false, price: 123, currency: "currency_example", equipment: "equipment_example", notes: "notes_example", brand: "brand_example")) // AddWatch | 
 
-DefaultAPI.addAccountWatch(accessToken: accessToken, watch: watch) { (response, error) in
+DefaultAPI.addAccountWatch(accessToken: accessToken, addWatch: addWatch) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -106,11 +106,11 @@ DefaultAPI.addAccountWatch(accessToken: accessToken, watch: watch) { (response, 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String** |  | 
- **watch** | [**Watch**](Watch.md) |  | 
+ **addWatch** | [**AddWatch**](AddWatch.md) |  | 
 
 ### Return type
 
-[**UpdateAccountWatch201Response**](UpdateAccountWatch201Response.md)
+[**UpdateAccountWatch200Response**](UpdateAccountWatch200Response.md)
 
 ### Authorization
 
@@ -372,7 +372,7 @@ No authorization required
 
 # **getWatchesByIds**
 ```swift
-    open class func getWatchesByIds(accessToken: String, watchId: String, completion: @escaping (_ data: GetAccountWatches200Response?, _ error: Error?) -> Void)
+    open class func getWatchesByIds(accessToken: String, watchId: String, completion: @escaping (_ data: SearchWatches200Response?, _ error: Error?) -> Void)
 ```
 
 
@@ -408,7 +408,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetAccountWatches200Response**](GetAccountWatches200Response.md)
+[**SearchWatches200Response**](SearchWatches200Response.md)
 
 ### Authorization
 
@@ -666,7 +666,7 @@ No authorization required
 
 # **searchWatches**
 ```swift
-    open class func searchWatches(accessToken: String, search: String, completion: @escaping (_ data: GetAccountWatches200Response?, _ error: Error?) -> Void)
+    open class func searchWatches(accessToken: String, search: String, completion: @escaping (_ data: SearchWatches200Response?, _ error: Error?) -> Void)
 ```
 
 
@@ -702,7 +702,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetAccountWatches200Response**](GetAccountWatches200Response.md)
+[**SearchWatches200Response**](SearchWatches200Response.md)
 
 ### Authorization
 
@@ -923,7 +923,7 @@ No authorization required
 
 # **updateAccountWatch**
 ```swift
-    open class func updateAccountWatch(accessToken: String, watch: Watch, completion: @escaping (_ data: UpdateAccountWatch201Response?, _ error: Error?) -> Void)
+    open class func updateAccountWatch(accessToken: String, updateWatch: UpdateWatch, completion: @escaping (_ data: UpdateAccountWatch200Response?, _ error: Error?) -> Void)
 ```
 
 
@@ -934,9 +934,9 @@ No authorization required
 import OpenAPIClient
 
 let accessToken = "accessToken_example" // String | 
-let watch = Watch(type: "type_example", id: "id_example", relationships: Watch_allOf_relationships(accountId: "accountId_example", brandId: "brandId_example"), attributes: Watch_allOf_attributes(watchId: "watchId_example", photos: ["photos_example"], reference: "reference_example", model: "model_example", caseMaterial: "caseMaterial_example", dialColor: "dialColor_example", isWorn: false, price: 123, currency: "currency_example", equipment: "equipment_example", notes: "notes_example", brand: "brand_example", timestamp: 123, isSwapping: false)) // Watch | 
+let updateWatch = UpdateWatch(type: "type_example", id: "id_example", attributes: AddWatch_allOf_attributes(photos: ["photos_example"], reference: "reference_example", model: "model_example", caseMaterial: "caseMaterial_example", dialColor: "dialColor_example", isWorn: false, price: 123, currency: "currency_example", equipment: "equipment_example", notes: "notes_example", brand: "brand_example")) // UpdateWatch | 
 
-DefaultAPI.updateAccountWatch(accessToken: accessToken, watch: watch) { (response, error) in
+DefaultAPI.updateAccountWatch(accessToken: accessToken, updateWatch: updateWatch) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -953,11 +953,11 @@ DefaultAPI.updateAccountWatch(accessToken: accessToken, watch: watch) { (respons
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String** |  | 
- **watch** | [**Watch**](Watch.md) |  | 
+ **updateWatch** | [**UpdateWatch**](UpdateWatch.md) |  | 
 
 ### Return type
 
-[**UpdateAccountWatch201Response**](UpdateAccountWatch201Response.md)
+[**UpdateAccountWatch200Response**](UpdateAccountWatch200Response.md)
 
 ### Authorization
 

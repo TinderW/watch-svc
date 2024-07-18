@@ -12,10 +12,10 @@ import AnyCodable
 
 public struct GetAccountWatches200Response: Codable, JSONEncodable, Hashable {
 
-    public var data: [Watch]?
-    public var included: [Brand]?
+    public var data: [Watch]
+    public var included: [Brand]
 
-    public init(data: [Watch]? = nil, included: [Brand]? = nil) {
+    public init(data: [Watch], included: [Brand]) {
         self.data = data
         self.included = included
     }
@@ -29,8 +29,8 @@ public struct GetAccountWatches200Response: Codable, JSONEncodable, Hashable {
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(data, forKey: .data)
-        try container.encodeIfPresent(included, forKey: .included)
+        try container.encode(data, forKey: .data)
+        try container.encode(included, forKey: .included)
     }
 }
 
