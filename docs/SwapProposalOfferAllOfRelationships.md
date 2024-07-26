@@ -1,8 +1,10 @@
-# SwapOfferAllOfRelationships
+# SwapProposalOfferAllOfRelationships
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**proposalInitiatorId** | **String** |  | 
+**proposalApproverId** | **String** |  | 
 **initiatorId** | **String** |  | 
 **sellerId** | **String** |  | 
 

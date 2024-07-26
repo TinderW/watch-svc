@@ -1,4 +1,4 @@
-# SwapOfferAllOfAttributes
+# CreateSwapOfferProposalAllOfAttributes
 
 ## Properties
 Name | Type | Description | Notes
@@ -6,8 +6,6 @@ Name | Type | Description | Notes
 **swapWatchesId** | **[String]** |  | 
 **offeredWatchesId** | **[String]** |  | 
 **kind** | **String** |  | 
-**status** | **String** |  | 
-**timestamp** | **Int64** |  | [optional] 
 **currency** | **String** |  | [optional] 
 **surchargeValue** | **Double** |  | [optional] 
 

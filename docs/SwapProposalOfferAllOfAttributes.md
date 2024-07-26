@@ -1,4 +1,4 @@
-# SwapOfferAllOfAttributes
+# SwapProposalOfferAllOfAttributes
 
 ## Properties
 Name | Type | Description | Notes

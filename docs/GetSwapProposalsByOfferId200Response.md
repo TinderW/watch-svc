@@ -1,10 +1,10 @@
-# SwapOfferAllOfRelationships
+# GetSwapProposalsByOfferId200Response
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**initiatorId** | **String** |  | 
-**sellerId** | **String** |  | 
+**data** | [SwapProposalOffer] |  | 
+**included** | [GetUserSwapOffers200ResponseIncludedInner] |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

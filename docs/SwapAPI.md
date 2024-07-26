@@ -26,7 +26,7 @@ create swap offer
 import OpenAPIClient
 
 let accessToken = "accessToken_example" // String | 
-let swapOffer = SwapOffer(type: "type_example", id: "id_example", relationships: SwapOffer_allOf_relationships(initiatorId: "initiatorId_example", sellerId: "sellerId_example", swapWatchId: "swapWatchId_example", offeredWatchId: "offeredWatchId_example"), attributes: SwapOffer_allOf_attributes(kind: "kind_example", status: "status_example", timestamp: 123, currency: "currency_example", surchargeValue: 123)) // SwapOffer | 
+let swapOffer = SwapOffer(type: "type_example", id: "id_example", relationships: SwapOffer_allOf_relationships(initiatorId: "initiatorId_example", sellerId: "sellerId_example"), attributes: SwapOffer_allOf_attributes(swapWatchesId: ["swapWatchesId_example"], offeredWatchesId: ["offeredWatchesId_example"], kind: "kind_example", status: "status_example", timestamp: 123, currency: "currency_example", surchargeValue: 123)) // SwapOffer | 
 
 SwapAPI.createSwapOffer(accessToken: accessToken, swapOffer: swapOffer) { (response, error) in
     guard error == nil else {

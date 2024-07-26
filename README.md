@@ -38,6 +38,10 @@ Class | Method | HTTP request | Description
 *SwapAPI* | [**setSwapOfferStatus**](docs/SwapAPI.md#setswapofferstatus) | **PUT** /integrations/watch-svc-go/swap-offer | 
 *SwapAPI* | [**setWatchSwapStatus**](docs/SwapAPI.md#setwatchswapstatus) | **POST** /integrations/watch-svc-go/watches/swap | 
 *SwapAPI* | [**syncSwapOffers**](docs/SwapAPI.md#syncswapoffers) | **POST** /integrations/watch-svc-go/swap-offer/sync | 
+*SwapProposalAPI* | [**createSwapProposal**](docs/SwapProposalAPI.md#createswapproposal) | **POST** /integrations/watch-svc-go/swap-proposal | 
+*SwapProposalAPI* | [**getSwapOffersByIds**](docs/SwapProposalAPI.md#getswapoffersbyids) | **GET** /integrations/watch-svc-go/swap-proposal/ids | 
+*SwapProposalAPI* | [**getSwapProposalsByOfferId**](docs/SwapProposalAPI.md#getswapproposalsbyofferid) | **GET** /integrations/watch-svc-go/swap-proposal | 
+*SwapProposalAPI* | [**setSwapProposalStatus**](docs/SwapProposalAPI.md#setswapproposalstatus) | **POST** /integrations/watch-svc-go/swap-proposal/status | 
 *WatchAPI* | [**addAccountWatch**](docs/WatchAPI.md#addaccountwatch) | **POST** /integrations/watch-svc-go/account-watches/ | 
 *WatchAPI* | [**getAccountWatches**](docs/WatchAPI.md#getaccountwatches) | **GET** /integrations/watch-svc-go/account-watches/ | 
 *WatchAPI* | [**removeAccountWatch**](docs/WatchAPI.md#removeaccountwatch) | **DELETE** /integrations/watch-svc-go/account-watches/ | 
@@ -62,10 +66,17 @@ Class | Method | HTTP request | Description
  - [CreateAccountRequestAllOfAttributes](docs/CreateAccountRequestAllOfAttributes.md)
  - [CreateAccountRequestKey](docs/CreateAccountRequestKey.md)
  - [CreateSwapOffer200Response](docs/CreateSwapOffer200Response.md)
+ - [CreateSwapOfferProposal](docs/CreateSwapOfferProposal.md)
+ - [CreateSwapOfferProposalAllOfAttributes](docs/CreateSwapOfferProposalAllOfAttributes.md)
+ - [CreateSwapOfferProposalAllOfRelationships](docs/CreateSwapOfferProposalAllOfRelationships.md)
+ - [CreateSwapOfferProposalKey](docs/CreateSwapOfferProposalKey.md)
+ - [CreateSwapProposal200Response](docs/CreateSwapProposal200Response.md)
  - [Errors](docs/Errors.md)
  - [ErrorsErrorsInner](docs/ErrorsErrorsInner.md)
  - [GetAccount200Response](docs/GetAccount200Response.md)
  - [GetAccountWatches200Response](docs/GetAccountWatches200Response.md)
+ - [GetSwapOffersByIds200Response](docs/GetSwapOffersByIds200Response.md)
+ - [GetSwapProposalsByOfferId200Response](docs/GetSwapProposalsByOfferId200Response.md)
  - [GetUserSwapOffers200Response](docs/GetUserSwapOffers200Response.md)
  - [GetUserSwapOffers200ResponseIncludedInner](docs/GetUserSwapOffers200ResponseIncludedInner.md)
  - [LoginAccountRequest](docs/LoginAccountRequest.md)
@@ -74,6 +85,10 @@ Class | Method | HTTP request | Description
  - [SearchAccounts200Response](docs/SearchAccounts200Response.md)
  - [SearchBrands200Response](docs/SearchBrands200Response.md)
  - [SearchWatches200Response](docs/SearchWatches200Response.md)
+ - [SetOfferProposalStatus](docs/SetOfferProposalStatus.md)
+ - [SetOfferProposalStatusAllOfAttributes](docs/SetOfferProposalStatusAllOfAttributes.md)
+ - [SetOfferProposalStatusAllOfRelationships](docs/SetOfferProposalStatusAllOfRelationships.md)
+ - [SetOfferProposalStatusKey](docs/SetOfferProposalStatusKey.md)
  - [SetSwapOfferStatus200Response](docs/SetSwapOfferStatus200Response.md)
  - [SetWatchSwapStatus200Response](docs/SetWatchSwapStatus200Response.md)
  - [SignInResponse](docs/SignInResponse.md)
@@ -83,6 +98,10 @@ Class | Method | HTTP request | Description
  - [SwapOfferAllOfAttributes](docs/SwapOfferAllOfAttributes.md)
  - [SwapOfferAllOfRelationships](docs/SwapOfferAllOfRelationships.md)
  - [SwapOfferKey](docs/SwapOfferKey.md)
+ - [SwapProposalOffer](docs/SwapProposalOffer.md)
+ - [SwapProposalOfferAllOfAttributes](docs/SwapProposalOfferAllOfAttributes.md)
+ - [SwapProposalOfferAllOfRelationships](docs/SwapProposalOfferAllOfRelationships.md)
+ - [SwapProposalOfferKey](docs/SwapProposalOfferKey.md)
  - [SwapStatus](docs/SwapStatus.md)
  - [SwapStatusAllOfAttributes](docs/SwapStatusAllOfAttributes.md)
  - [SwapStatusKey](docs/SwapStatusKey.md)
