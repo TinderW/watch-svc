@@ -13,7 +13,7 @@ import AnyCodable
 public struct SwapStatusKey: Codable, JSONEncodable, Hashable {
 
     public enum ModelType: String, Codable, CaseIterable {
-        case swapStatus = "swap-status"
+        case swapOfferStatus = "swap-offer-status"
     }
     public var type: ModelType
     public var id: String

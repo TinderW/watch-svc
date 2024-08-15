@@ -13,7 +13,7 @@ import AnyCodable
 public struct SyncAccountSwapOffersKey: Codable, JSONEncodable, Hashable {
 
     public enum ModelType: String, Codable, CaseIterable {
-        case swapSync = "swap-sync"
+        case swapOfferSync = "swap-offer-sync"
     }
     public var type: ModelType
     public var id: String

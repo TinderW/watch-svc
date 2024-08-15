@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**createSwapOffer**](SwapAPI.md#createswapoffer) | **POST** /integrations/watch-svc-go/swap-offer | 
 [**getUserSwapOffers**](SwapAPI.md#getuserswapoffers) | **GET** /integrations/watch-svc-go/swap-offer | 
 [**setSwapOfferStatus**](SwapAPI.md#setswapofferstatus) | **PUT** /integrations/watch-svc-go/swap-offer | 
-[**setWatchSwapStatus**](SwapAPI.md#setwatchswapstatus) | **POST** /integrations/watch-svc-go/watches/swap | 
 [**syncSwapOffers**](SwapAPI.md#syncswapoffers) | **POST** /integrations/watch-svc-go/swap-offer/sync | 
 
 
@@ -18,7 +17,7 @@ Method | HTTP request | Description
 
 
 
-create swap offer
+create swap_offer offer
 
 ### Example
 ```swift
@@ -69,7 +68,7 @@ No authorization required
 
 
 
-get user swap offers
+get user swap_offer offers
 
 ### Example
 ```swift
@@ -118,7 +117,7 @@ No authorization required
 
 
 
-update swap offer
+update swap_offer offer
 
 ### Example
 ```swift
@@ -152,59 +151,6 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SetSwapOfferStatus200Response**](SetSwapOfferStatus200Response.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **setWatchSwapStatus**
-```swift
-    open class func setWatchSwapStatus(swapStatus: Bool, accessToken: String, watchId: String, completion: @escaping (_ data: SetWatchSwapStatus200Response?, _ error: Error?) -> Void)
-```
-
-
-
-setSwapstatus
-
-### Example
-```swift
-// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
-import OpenAPIClient
-
-let swapStatus = true // Bool | 
-let accessToken = "accessToken_example" // String | 
-let watchId = "watchId_example" // String | 
-
-SwapAPI.setWatchSwapStatus(swapStatus: swapStatus, accessToken: accessToken, watchId: watchId) { (response, error) in
-    guard error == nil else {
-        print(error)
-        return
-    }
-
-    if (response) {
-        dump(response)
-    }
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **swapStatus** | **Bool** |  | 
- **accessToken** | **String** |  | 
- **watchId** | **String** |  | 
-
-### Return type
-
-[**SetWatchSwapStatus200Response**](SetWatchSwapStatus200Response.md)
 
 ### Authorization
 

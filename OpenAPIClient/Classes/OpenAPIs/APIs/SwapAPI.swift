@@ -33,7 +33,7 @@ open class SwapAPI {
 
     /**
      - POST /integrations/watch-svc-go/swap-offer
-     - create swap offer
+     - create swap_offer offer
      - parameter accessToken: (header)  
      - parameter swapOffer: (body)  
      - returns: RequestBuilder<CreateSwapOffer200Response> 
@@ -77,7 +77,7 @@ open class SwapAPI {
 
     /**
      - GET /integrations/watch-svc-go/swap-offer
-     - get user swap offers
+     - get user swap_offer offers
      - parameter accessToken: (header)  
      - returns: RequestBuilder<GetUserSwapOffers200Response> 
      */
@@ -121,7 +121,7 @@ open class SwapAPI {
 
     /**
      - PUT /integrations/watch-svc-go/swap-offer
-     - update swap offer
+     - update swap_offer offer
      - parameter accessToken: (header)  
      - parameter offerId: (query)  (optional)
      - parameter status: (query)  (optional)
@@ -147,56 +147,6 @@ open class SwapAPI {
         let localVariableRequestBuilder: RequestBuilder<SetSwapOfferStatus200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "PUT", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
-    }
-
-    /**
-
-     - parameter swapStatus: (query)  
-     - parameter accessToken: (header)  
-     - parameter watchId: (query)  
-     - parameter apiResponseQueue: The queue on which api response is dispatched.
-     - parameter completion: completion handler to receive the data and the error objects
-     */
-    @discardableResult
-    open class func setWatchSwapStatus(swapStatus: Bool, accessToken: String, watchId: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: SetWatchSwapStatus200Response?, _ error: Error?) -> Void)) -> RequestTask {
-        return setWatchSwapStatusWithRequestBuilder(swapStatus: swapStatus, accessToken: accessToken, watchId: watchId).execute(apiResponseQueue) { result in
-            switch result {
-            case let .success(response):
-                completion(response.body, nil)
-            case let .failure(error):
-                completion(nil, error)
-            }
-        }
-    }
-
-    /**
-     - POST /integrations/watch-svc-go/watches/swap
-     - setSwapstatus
-     - parameter swapStatus: (query)  
-     - parameter accessToken: (header)  
-     - parameter watchId: (query)  
-     - returns: RequestBuilder<SetWatchSwapStatus200Response> 
-     */
-    open class func setWatchSwapStatusWithRequestBuilder(swapStatus: Bool, accessToken: String, watchId: String) -> RequestBuilder<SetWatchSwapStatus200Response> {
-        let localVariablePath = "/integrations/watch-svc-go/watches/swap"
-        let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
-        let localVariableParameters: [String: Any]? = nil
-
-        var localVariableUrlComponents = URLComponents(string: localVariableURLString)
-        localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
-            "swap-status": (wrappedValue: swapStatus.encodeToJSON(), isExplode: true),
-            "watch-id": (wrappedValue: watchId.encodeToJSON(), isExplode: true),
-        ])
-
-        let localVariableNillableHeaders: [String: Any?] = [
-            "access-token": accessToken.encodeToJSON(),
-        ]
-
-        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
-
-        let localVariableRequestBuilder: RequestBuilder<SetWatchSwapStatus200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
-
-        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
     }
 
     /**

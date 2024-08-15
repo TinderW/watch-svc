@@ -198,6 +198,56 @@ open class WatchAPI {
     /**
 
      - parameter accessToken: (header)  
+     - parameter watchId: (query)  
+     - parameter status: (query)  (optional)
+     - parameter apiResponseQueue: The queue on which api response is dispatched.
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    @discardableResult
+    open class func setWatchSwapStatus(accessToken: String, watchId: String, status: String? = nil, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: SetWatchSwapStatus200Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return setWatchSwapStatusWithRequestBuilder(accessToken: accessToken, watchId: watchId, status: status).execute(apiResponseQueue) { result in
+            switch result {
+            case let .success(response):
+                completion(response.body, nil)
+            case let .failure(error):
+                completion(nil, error)
+            }
+        }
+    }
+
+    /**
+     - POST /integrations/watch-svc-go/watches/swap
+     - setSwapstatus
+     - parameter accessToken: (header)  
+     - parameter watchId: (query)  
+     - parameter status: (query)  (optional)
+     - returns: RequestBuilder<SetWatchSwapStatus200Response> 
+     */
+    open class func setWatchSwapStatusWithRequestBuilder(accessToken: String, watchId: String, status: String? = nil) -> RequestBuilder<SetWatchSwapStatus200Response> {
+        let localVariablePath = "/integrations/watch-svc-go/watches/swap"
+        let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
+        let localVariableParameters: [String: Any]? = nil
+
+        var localVariableUrlComponents = URLComponents(string: localVariableURLString)
+        localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
+            "status": (wrappedValue: status?.encodeToJSON(), isExplode: true),
+            "watch-id": (wrappedValue: watchId.encodeToJSON(), isExplode: true),
+        ])
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            "access-token": accessToken.encodeToJSON(),
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<SetWatchSwapStatus200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
+    }
+
+    /**
+
+     - parameter accessToken: (header)  
      - parameter syncAccountWatchesRequest: (body)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects

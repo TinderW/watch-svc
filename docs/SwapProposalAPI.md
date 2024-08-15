@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 
 
-create swap proposal
+create swap offer proposal
 
 ### Example
 ```swift
@@ -68,7 +68,7 @@ No authorization required
 
 
 
-get all the swap proposals by their id
+get all the swap_offer proposals by their id
 
 ### Example
 ```swift
@@ -119,7 +119,7 @@ No authorization required
 
 
 
-get all the swap proposals by swap offer id
+get all the swap_offer proposals by swap_offer offer id
 
 ### Example
 ```swift
@@ -170,7 +170,7 @@ No authorization required
 
 
 
-set swap status
+set swap_offer status
 
 ### Example
 ```swift
@@ -178,7 +178,7 @@ set swap status
 import OpenAPIClient
 
 let accessToken = "accessToken_example" // String | 
-let setOfferProposalStatus = SetOfferProposalStatus(type: "type_example", id: "id_example", relationships: SetOfferProposalStatus_allOf_relationships(swapProposalId: "swapProposalId_example"), attributes: SetOfferProposalStatus_allOf_attributes(status: "status_example")) // SetOfferProposalStatus | 
+let setOfferProposalStatus = SetOfferProposalStatus(type: "type_example", id: "id_example", relationships: SetOfferProposalStatus_allOf_relationships(swapOfferProposalId: "swapOfferProposalId_example"), attributes: SetOfferProposalStatus_allOf_attributes(status: "status_example")) // SetOfferProposalStatus | 
 
 SwapProposalAPI.setSwapProposalStatus(accessToken: accessToken, setOfferProposalStatus: setOfferProposalStatus) { (response, error) in
     guard error == nil else {

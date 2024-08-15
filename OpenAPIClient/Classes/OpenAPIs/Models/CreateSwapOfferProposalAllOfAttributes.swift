@@ -13,9 +13,9 @@ import AnyCodable
 public struct CreateSwapOfferProposalAllOfAttributes: Codable, JSONEncodable, Hashable {
 
     public enum Kind: String, Codable, CaseIterable {
-        case swap = "swap"
-        case swapInitiatorPay = "swap-initiator-pay"
-        case swapSellerPay = "swap-seller-pay"
+        case offer = "swap-offer"
+        case offerInitiatorPay = "swap-offer-initiator-pay"
+        case offerSellerPay = "swap-offer-seller-pay"
     }
     public var swapWatchesId: [String]
     public var offeredWatchesId: [String]

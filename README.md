@@ -26,17 +26,16 @@ All URIs are relative to *https://34.227.206.94.sslip.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccountAPI* | [**createAccount**](docs/AccountAPI.md#createaccount) | **POST** /integrations/watch-svc-go/account | 
 *AccountAPI* | [**getAccount**](docs/AccountAPI.md#getaccount) | **GET** /integrations/watch-svc-go/account | 
 *AccountAPI* | [**searchAccounts**](docs/AccountAPI.md#searchaccounts) | **GET** /integrations/watch-svc-go/account/search | 
 *AuthAPI* | [**accountLogin**](docs/AuthAPI.md#accountlogin) | **POST** /integrations/watch-svc-go/account-login | 
+*AuthAPI* | [**createAccount**](docs/AuthAPI.md#createaccount) | **POST** /integrations/watch-svc-go/account | 
 *AuthAPI* | [**googleSignIn**](docs/AuthAPI.md#googlesignin) | **POST** /integrations/watch-svc-go/oauth2/google | 
 *AuthAPI* | [**refreshReauth**](docs/AuthAPI.md#refreshreauth) | **POST** /integrations/watch-svc-go/refresh-reauth | 
 *BrandAPI* | [**searchBrands**](docs/BrandAPI.md#searchbrands) | **GET** /integrations/watch-svc-go/brand/search | 
 *SwapAPI* | [**createSwapOffer**](docs/SwapAPI.md#createswapoffer) | **POST** /integrations/watch-svc-go/swap-offer | 
 *SwapAPI* | [**getUserSwapOffers**](docs/SwapAPI.md#getuserswapoffers) | **GET** /integrations/watch-svc-go/swap-offer | 
 *SwapAPI* | [**setSwapOfferStatus**](docs/SwapAPI.md#setswapofferstatus) | **PUT** /integrations/watch-svc-go/swap-offer | 
-*SwapAPI* | [**setWatchSwapStatus**](docs/SwapAPI.md#setwatchswapstatus) | **POST** /integrations/watch-svc-go/watches/swap | 
 *SwapAPI* | [**syncSwapOffers**](docs/SwapAPI.md#syncswapoffers) | **POST** /integrations/watch-svc-go/swap-offer/sync | 
 *SwapProposalAPI* | [**createSwapProposal**](docs/SwapProposalAPI.md#createswapproposal) | **POST** /integrations/watch-svc-go/swap-proposal | 
 *SwapProposalAPI* | [**getSwapOffersByIds**](docs/SwapProposalAPI.md#getswapoffersbyids) | **GET** /integrations/watch-svc-go/swap-proposal/ids | 
@@ -46,6 +45,7 @@ Class | Method | HTTP request | Description
 *WatchAPI* | [**getAccountWatches**](docs/WatchAPI.md#getaccountwatches) | **GET** /integrations/watch-svc-go/account-watches/ | 
 *WatchAPI* | [**removeAccountWatch**](docs/WatchAPI.md#removeaccountwatch) | **DELETE** /integrations/watch-svc-go/account-watches/ | 
 *WatchAPI* | [**searchWatches**](docs/WatchAPI.md#searchwatches) | **GET** /integrations/watch-svc-go/watches | 
+*WatchAPI* | [**setWatchSwapStatus**](docs/WatchAPI.md#setwatchswapstatus) | **POST** /integrations/watch-svc-go/watches/swap | 
 *WatchAPI* | [**syncAccountWatches**](docs/WatchAPI.md#syncaccountwatches) | **POST** /integrations/watch-svc-go/account-watches/sync | 
 *WatchAPI* | [**updateAccountWatch**](docs/WatchAPI.md#updateaccountwatch) | **PUT** /integrations/watch-svc-go/account-watches/ | 
 

@@ -33,7 +33,7 @@ open class SwapProposalAPI {
 
     /**
      - POST /integrations/watch-svc-go/swap-proposal
-     - create swap proposal
+     - create swap offer proposal
      - parameter accessToken: (header)  
      - parameter createSwapOfferProposal: (body)  
      - returns: RequestBuilder<CreateSwapProposal200Response> 
@@ -78,7 +78,7 @@ open class SwapProposalAPI {
 
     /**
      - GET /integrations/watch-svc-go/swap-proposal/ids
-     - get all the swap proposals by their id
+     - get all the swap_offer proposals by their id
      - parameter accessToken: (header)  
      - parameter offerProposalIds: (query)  (optional)
      - returns: RequestBuilder<GetSwapOffersByIds200Response> 
@@ -125,7 +125,7 @@ open class SwapProposalAPI {
 
     /**
      - GET /integrations/watch-svc-go/swap-proposal
-     - get all the swap proposals by swap offer id
+     - get all the swap_offer proposals by swap_offer offer id
      - parameter accessToken: (header)  
      - parameter offerId: (query)  (optional)
      - returns: RequestBuilder<GetSwapProposalsByOfferId200Response> 
@@ -172,7 +172,7 @@ open class SwapProposalAPI {
 
     /**
      - POST /integrations/watch-svc-go/swap-proposal/status
-     - set swap status
+     - set swap_offer status
      - parameter accessToken: (header)  
      - parameter setOfferProposalStatus: (body)  
      - returns: RequestBuilder<CreateSwapOffer200Response> 

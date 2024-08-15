@@ -8,6 +8,7 @@ Method | HTTP request | Description
 [**getAccountWatches**](WatchAPI.md#getaccountwatches) | **GET** /integrations/watch-svc-go/account-watches/ | 
 [**removeAccountWatch**](WatchAPI.md#removeaccountwatch) | **DELETE** /integrations/watch-svc-go/account-watches/ | 
 [**searchWatches**](WatchAPI.md#searchwatches) | **GET** /integrations/watch-svc-go/watches | 
+[**setWatchSwapStatus**](WatchAPI.md#setwatchswapstatus) | **POST** /integrations/watch-svc-go/watches/swap | 
 [**syncAccountWatches**](WatchAPI.md#syncaccountwatches) | **POST** /integrations/watch-svc-go/account-watches/sync | 
 [**updateAccountWatch**](WatchAPI.md#updateaccountwatch) | **PUT** /integrations/watch-svc-go/account-watches/ | 
 
@@ -198,6 +199,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SearchWatches200Response**](SearchWatches200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **setWatchSwapStatus**
+```swift
+    open class func setWatchSwapStatus(accessToken: String, watchId: String, status: String? = nil, completion: @escaping (_ data: SetWatchSwapStatus200Response?, _ error: Error?) -> Void)
+```
+
+
+
+setSwapstatus
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OpenAPIClient
+
+let accessToken = "accessToken_example" // String | 
+let watchId = "watchId_example" // String | 
+let status = "status_example" // String |  (optional)
+
+WatchAPI.setWatchSwapStatus(accessToken: accessToken, watchId: watchId, status: status) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String** |  | 
+ **watchId** | **String** |  | 
+ **status** | **String** |  | [optional] 
+
+### Return type
+
+[**SetWatchSwapStatus200Response**](SetWatchSwapStatus200Response.md)
 
 ### Authorization
 

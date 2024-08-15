@@ -13,7 +13,7 @@ import AnyCodable
 public struct SetOfferProposalStatus: Codable, JSONEncodable, Hashable {
 
     public enum ModelType: String, Codable, CaseIterable {
-        case setSwapProposalStatus = "set-swap-proposal-status"
+        case setSwapOfferProposalStatus = "set-swap-offer-proposal-status"
     }
     public var type: ModelType
     public var id: String

@@ -13,7 +13,7 @@ import AnyCodable
 public struct SwapProposalOfferKey: Codable, JSONEncodable, Hashable {
 
     public enum ModelType: String, Codable, CaseIterable {
-        case swapProposalOffer = "swap-proposal-offer"
+        case swapOfferProposalOffer = "swap-offer-proposal-offer"
     }
     public var type: ModelType
     public var id: String
