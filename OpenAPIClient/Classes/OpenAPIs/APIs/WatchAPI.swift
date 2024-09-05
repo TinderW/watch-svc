@@ -104,6 +104,53 @@ open class WatchAPI {
 
     /**
 
+     - parameter accessToken: (header)  
+     - parameter ids: (query)  
+     - parameter apiResponseQueue: The queue on which api response is dispatched.
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    @discardableResult
+    open class func getWatchesById(accessToken: String, ids: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: GetAccountWatches200Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return getWatchesByIdWithRequestBuilder(accessToken: accessToken, ids: ids).execute(apiResponseQueue) { result in
+            switch result {
+            case let .success(response):
+                completion(response.body, nil)
+            case let .failure(error):
+                completion(nil, error)
+            }
+        }
+    }
+
+    /**
+     - GET /integrations/watch-svc-go/watches-by-id
+     - returns searched watches with account
+     - parameter accessToken: (header)  
+     - parameter ids: (query)  
+     - returns: RequestBuilder<GetAccountWatches200Response> 
+     */
+    open class func getWatchesByIdWithRequestBuilder(accessToken: String, ids: String) -> RequestBuilder<GetAccountWatches200Response> {
+        let localVariablePath = "/integrations/watch-svc-go/watches-by-id"
+        let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
+        let localVariableParameters: [String: Any]? = nil
+
+        var localVariableUrlComponents = URLComponents(string: localVariableURLString)
+        localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
+            "ids": (wrappedValue: ids.encodeToJSON(), isExplode: true),
+        ])
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            "access-token": accessToken.encodeToJSON(),
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetAccountWatches200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
+    }
+
+    /**
+
      - parameter watchId: (query)  
      - parameter accessToken: (header)  
      - parameter apiResponseQueue: The queue on which api response is dispatched.

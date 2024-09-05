@@ -43,6 +43,7 @@ Class | Method | HTTP request | Description
 *SwapProposalAPI* | [**setSwapProposalStatus**](docs/SwapProposalAPI.md#setswapproposalstatus) | **POST** /integrations/watch-svc-go/swap-proposal/status | 
 *WatchAPI* | [**addAccountWatch**](docs/WatchAPI.md#addaccountwatch) | **POST** /integrations/watch-svc-go/account-watches/ | 
 *WatchAPI* | [**getAccountWatches**](docs/WatchAPI.md#getaccountwatches) | **GET** /integrations/watch-svc-go/account-watches/ | 
+*WatchAPI* | [**getWatchesById**](docs/WatchAPI.md#getwatchesbyid) | **GET** /integrations/watch-svc-go/watches-by-id | 
 *WatchAPI* | [**removeAccountWatch**](docs/WatchAPI.md#removeaccountwatch) | **DELETE** /integrations/watch-svc-go/account-watches/ | 
 *WatchAPI* | [**searchWatches**](docs/WatchAPI.md#searchwatches) | **GET** /integrations/watch-svc-go/watches | 
 *WatchAPI* | [**setWatchSwapStatus**](docs/WatchAPI.md#setwatchswapstatus) | **POST** /integrations/watch-svc-go/watches/swap | 

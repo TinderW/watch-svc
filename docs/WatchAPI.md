@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**addAccountWatch**](WatchAPI.md#addaccountwatch) | **POST** /integrations/watch-svc-go/account-watches/ | 
 [**getAccountWatches**](WatchAPI.md#getaccountwatches) | **GET** /integrations/watch-svc-go/account-watches/ | 
+[**getWatchesById**](WatchAPI.md#getwatchesbyid) | **GET** /integrations/watch-svc-go/watches-by-id | 
 [**removeAccountWatch**](WatchAPI.md#removeaccountwatch) | **DELETE** /integrations/watch-svc-go/account-watches/ | 
 [**searchWatches**](WatchAPI.md#searchwatches) | **GET** /integrations/watch-svc-go/watches | 
 [**setWatchSwapStatus**](WatchAPI.md#setwatchswapstatus) | **POST** /integrations/watch-svc-go/watches/swap | 
@@ -95,6 +96,57 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String** |  | 
  **account** | **String** |  | [optional] 
+
+### Return type
+
+[**GetAccountWatches200Response**](GetAccountWatches200Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **getWatchesById**
+```swift
+    open class func getWatchesById(accessToken: String, ids: String, completion: @escaping (_ data: GetAccountWatches200Response?, _ error: Error?) -> Void)
+```
+
+
+
+returns searched watches with account
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OpenAPIClient
+
+let accessToken = "accessToken_example" // String | 
+let ids = "ids_example" // String | 
+
+WatchAPI.getWatchesById(accessToken: accessToken, ids: ids) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String** |  | 
+ **ids** | **String** |  | 
 
 ### Return type
 
