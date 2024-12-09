@@ -64,6 +64,48 @@ open class SwapAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
+    open class func getSwapOffers(accessToken: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: GetUserSwapOffers200Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return getSwapOffersWithRequestBuilder(accessToken: accessToken).execute(apiResponseQueue) { result in
+            switch result {
+            case let .success(response):
+                completion(response.body, nil)
+            case let .failure(error):
+                completion(nil, error)
+            }
+        }
+    }
+
+    /**
+     - GET /integrations/watch-svc-go/swap-offer/admin
+     - get swap offer
+     - parameter accessToken: (header)  
+     - returns: RequestBuilder<GetUserSwapOffers200Response> 
+     */
+    open class func getSwapOffersWithRequestBuilder(accessToken: String) -> RequestBuilder<GetUserSwapOffers200Response> {
+        let localVariablePath = "/integrations/watch-svc-go/swap-offer/admin"
+        let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
+        let localVariableParameters: [String: Any]? = nil
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            "access-token": accessToken.encodeToJSON(),
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<GetUserSwapOffers200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
+    }
+
+    /**
+
+     - parameter accessToken: (header)  
+     - parameter apiResponseQueue: The queue on which api response is dispatched.
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    @discardableResult
     open class func getUserSwapOffers(accessToken: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: GetUserSwapOffers200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return getUserSwapOffersWithRequestBuilder(accessToken: accessToken).execute(apiResponseQueue) { result in
             switch result {

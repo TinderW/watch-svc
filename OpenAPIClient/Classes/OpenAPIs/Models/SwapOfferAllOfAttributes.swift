@@ -19,8 +19,11 @@ public struct SwapOfferAllOfAttributes: Codable, JSONEncodable, Hashable {
     }
     public enum Status: String, Codable, CaseIterable {
         case active = "active"
+        case accepted = "accepted"
+        case denied = "denied"
+        case processing = "processing"
+        case rejected = "rejected"
         case completed = "completed"
-        case closed = "closed"
     }
     public var swapWatchesId: [String]
     public var offeredWatchesId: [String]
