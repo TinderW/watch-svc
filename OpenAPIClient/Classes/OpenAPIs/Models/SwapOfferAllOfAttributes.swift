@@ -18,6 +18,7 @@ public struct SwapOfferAllOfAttributes: Codable, JSONEncodable, Hashable {
         case offerSellerPay = "swap-offer-seller-pay"
     }
     public enum Status: String, Codable, CaseIterable {
+        case cancelled = "cancelled"
         case active = "active"
         case accepted = "accepted"
         case denied = "denied"
