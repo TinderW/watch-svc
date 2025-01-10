@@ -31,9 +31,9 @@ public struct VoucherAllOfAttributes: Codable, JSONEncodable, Hashable {
     /** Minimum spend required to redeem the voucher */
     public var minimumSpend: Double?
     /** URL to the voucher's photo */
-    public var photoUrl: String?
+    public var photoUrl: String
 
-    public init(kind: String, discountValue: Double, description: String, expiresAt: Int64, createAt: Int64, code: String, currency: String, status: String, minimumSpend: Double? = nil, photoUrl: String? = nil) {
+    public init(kind: String, discountValue: Double, description: String, expiresAt: Int64, createAt: Int64, code: String, currency: String, status: String, minimumSpend: Double? = nil, photoUrl: String) {
         self.kind = kind
         self.discountValue = discountValue
         self.description = description
@@ -72,7 +72,7 @@ public struct VoucherAllOfAttributes: Codable, JSONEncodable, Hashable {
         try container.encode(currency, forKey: .currency)
         try container.encode(status, forKey: .status)
         try container.encodeIfPresent(minimumSpend, forKey: .minimumSpend)
-        try container.encodeIfPresent(photoUrl, forKey: .photoUrl)
+        try container.encode(photoUrl, forKey: .photoUrl)
     }
 }
 

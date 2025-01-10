@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **currency** | **String** | Currency of the discount | 
 **status** | **String** | Current status of the voucher (e.g., active, redeemed, expired) | 
 **minimumSpend** | **Double** | Minimum spend required to redeem the voucher | [optional] 
-**photoUrl** | **String** | URL to the voucher&#39;s photo | [optional] 
+**photoUrl** | **String** | URL to the voucher&#39;s photo | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
