@@ -42,6 +42,7 @@ Class | Method | HTTP request | Description
 *SwapProposalAPI* | [**getSwapOffersByIds**](docs/SwapProposalAPI.md#getswapoffersbyids) | **GET** /integrations/watch-svc-go/swap-proposal/ids | 
 *SwapProposalAPI* | [**getSwapProposalsByOfferId**](docs/SwapProposalAPI.md#getswapproposalsbyofferid) | **GET** /integrations/watch-svc-go/swap-proposal | 
 *SwapProposalAPI* | [**setSwapProposalStatus**](docs/SwapProposalAPI.md#setswapproposalstatus) | **POST** /integrations/watch-svc-go/swap-proposal/status | 
+*VoucherAPI* | [**getUserVouchers**](docs/VoucherAPI.md#getuservouchers) | **GET** /integrations/watch-svc-go/vauchers/user | 
 *WatchAPI* | [**addAccountWatch**](docs/WatchAPI.md#addaccountwatch) | **POST** /integrations/watch-svc-go/account-watches/ | 
 *WatchAPI* | [**getAccountWatches**](docs/WatchAPI.md#getaccountwatches) | **GET** /integrations/watch-svc-go/account-watches/ | 
 *WatchAPI* | [**getWatchesById**](docs/WatchAPI.md#getwatchesbyid) | **GET** /integrations/watch-svc-go/watches-by-id | 
@@ -81,6 +82,7 @@ Class | Method | HTTP request | Description
  - [GetSwapProposalsByOfferId200Response](docs/GetSwapProposalsByOfferId200Response.md)
  - [GetUserSwapOffers200Response](docs/GetUserSwapOffers200Response.md)
  - [GetUserSwapOffers200ResponseIncludedInner](docs/GetUserSwapOffers200ResponseIncludedInner.md)
+ - [GetUserVouchers200Response](docs/GetUserVouchers200Response.md)
  - [LoginAccountRequest](docs/LoginAccountRequest.md)
  - [LoginAccountRequestAllOfAttributes](docs/LoginAccountRequestAllOfAttributes.md)
  - [LoginAccountRequestKey](docs/LoginAccountRequestKey.md)
@@ -122,6 +124,10 @@ Class | Method | HTTP request | Description
  - [UpdateAccountWatch200Response](docs/UpdateAccountWatch200Response.md)
  - [UpdateWatch](docs/UpdateWatch.md)
  - [UpdateWatchKey](docs/UpdateWatchKey.md)
+ - [Voucher](docs/Voucher.md)
+ - [VoucherAllOfAttributes](docs/VoucherAllOfAttributes.md)
+ - [VoucherAllOfRelationships](docs/VoucherAllOfRelationships.md)
+ - [VoucherKey](docs/VoucherKey.md)
  - [Watch](docs/Watch.md)
  - [WatchAllOfAttributes](docs/WatchAllOfAttributes.md)
  - [WatchAllOfRelationships](docs/WatchAllOfRelationships.md)
