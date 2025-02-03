@@ -102,7 +102,7 @@ open class AuthAPI {
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func googleSignIn(tokenId: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: AccountLogin200Response?, _ error: Error?) -> Void)) -> RequestTask {
+    open class func googleSignIn(tokenId: String, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: GoogleSignIn200Response?, _ error: Error?) -> Void)) -> RequestTask {
         return googleSignInWithRequestBuilder(tokenId: tokenId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
@@ -116,9 +116,9 @@ open class AuthAPI {
     /**
      - POST /integrations/watch-svc-go/oauth2/google
      - parameter tokenId: (header) oauth2 auth token 
-     - returns: RequestBuilder<AccountLogin200Response> 
+     - returns: RequestBuilder<GoogleSignIn200Response> 
      */
-    open class func googleSignInWithRequestBuilder(tokenId: String) -> RequestBuilder<AccountLogin200Response> {
+    open class func googleSignInWithRequestBuilder(tokenId: String) -> RequestBuilder<GoogleSignIn200Response> {
         let localVariablePath = "/integrations/watch-svc-go/oauth2/google"
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
@@ -131,7 +131,7 @@ open class AuthAPI {
 
         let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
 
-        let localVariableRequestBuilder: RequestBuilder<AccountLogin200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
+        let localVariableRequestBuilder: RequestBuilder<GoogleSignIn200Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
 
         return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
     }

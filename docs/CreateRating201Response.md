@@ -1,10 +1,9 @@
-# GetAccount200Response
+# CreateRating201Response
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**Account**](Account.md) |  | 
-**included** | [GetAccount200ResponseIncludedInner] |  | 
+**data** | [**Rate**](Rate.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

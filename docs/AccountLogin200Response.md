@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [**SignInResponse**](SignInResponse.md) |  | [optional] 
+**data** | [**SignInResponse**](SignInResponse.md) |  | 
+**included** | [AccountLogin200ResponseIncludedInner] |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

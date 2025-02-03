@@ -65,7 +65,7 @@ No authorization required
 
 # **getAccountWatches**
 ```swift
-    open class func getAccountWatches(accessToken: String, account: String? = nil, completion: @escaping (_ data: GetAccountWatches200Response?, _ error: Error?) -> Void)
+    open class func getAccountWatches(accessToken: String, accountId: String? = nil, completion: @escaping (_ data: GetAccountWatches200Response?, _ error: Error?) -> Void)
 ```
 
 
@@ -76,9 +76,9 @@ No authorization required
 import OpenAPIClient
 
 let accessToken = "accessToken_example" // String | 
-let account = "account_example" // String |  (optional)
+let accountId = "accountId_example" // String |  (optional)
 
-WatchAPI.getAccountWatches(accessToken: accessToken, account: account) { (response, error) in
+WatchAPI.getAccountWatches(accessToken: accessToken, accountId: accountId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -95,7 +95,7 @@ WatchAPI.getAccountWatches(accessToken: accessToken, account: account) { (respon
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String** |  | 
- **account** | **String** |  | [optional] 
+ **accountId** | **String** |  | [optional] 
 
 ### Return type
 

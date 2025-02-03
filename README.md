@@ -33,6 +33,7 @@ Class | Method | HTTP request | Description
 *AuthAPI* | [**googleSignIn**](docs/AuthAPI.md#googlesignin) | **POST** /integrations/watch-svc-go/oauth2/google | 
 *AuthAPI* | [**refreshReauth**](docs/AuthAPI.md#refreshreauth) | **POST** /integrations/watch-svc-go/refresh-reauth | 
 *BrandAPI* | [**searchBrands**](docs/BrandAPI.md#searchbrands) | **GET** /integrations/watch-svc-go/brand/search | 
+*RatingAPI* | [**createRating**](docs/RatingAPI.md#createrating) | **POST** /integrations/watch-svc-go/rating | 
 *SwapAPI* | [**createSwapOffer**](docs/SwapAPI.md#createswapoffer) | **POST** /integrations/watch-svc-go/swap-offer | 
 *SwapAPI* | [**getSwapOffers**](docs/SwapAPI.md#getswapoffers) | **GET** /integrations/watch-svc-go/swap-offer/admin | 
 *SwapAPI* | [**getUserSwapOffers**](docs/SwapAPI.md#getuserswapoffers) | **GET** /integrations/watch-svc-go/swap-offer | 
@@ -59,15 +60,21 @@ Class | Method | HTTP request | Description
  - [AccountAllOfAttributes](docs/AccountAllOfAttributes.md)
  - [AccountKey](docs/AccountKey.md)
  - [AccountLogin200Response](docs/AccountLogin200Response.md)
+ - [AccountLogin200ResponseIncludedInner](docs/AccountLogin200ResponseIncludedInner.md)
  - [AddWatch](docs/AddWatch.md)
  - [AddWatchAllOfAttributes](docs/AddWatchAllOfAttributes.md)
  - [AddWatchKey](docs/AddWatchKey.md)
+ - [BasicRating](docs/BasicRating.md)
+ - [BasicRatingAllOfAttributes](docs/BasicRatingAllOfAttributes.md)
+ - [BasicRatingAllOfRelationships](docs/BasicRatingAllOfRelationships.md)
+ - [BasicRatingKey](docs/BasicRatingKey.md)
  - [Brand](docs/Brand.md)
  - [BrandAllOfAttributes](docs/BrandAllOfAttributes.md)
  - [BrandKey](docs/BrandKey.md)
  - [CreateAccountRequest](docs/CreateAccountRequest.md)
  - [CreateAccountRequestAllOfAttributes](docs/CreateAccountRequestAllOfAttributes.md)
  - [CreateAccountRequestKey](docs/CreateAccountRequestKey.md)
+ - [CreateRating201Response](docs/CreateRating201Response.md)
  - [CreateSwapOffer200Response](docs/CreateSwapOffer200Response.md)
  - [CreateSwapOfferProposal](docs/CreateSwapOfferProposal.md)
  - [CreateSwapOfferProposalAllOfAttributes](docs/CreateSwapOfferProposalAllOfAttributes.md)
@@ -77,15 +84,21 @@ Class | Method | HTTP request | Description
  - [Errors](docs/Errors.md)
  - [ErrorsErrorsInner](docs/ErrorsErrorsInner.md)
  - [GetAccount200Response](docs/GetAccount200Response.md)
+ - [GetAccount200ResponseIncludedInner](docs/GetAccount200ResponseIncludedInner.md)
  - [GetAccountWatches200Response](docs/GetAccountWatches200Response.md)
  - [GetSwapOffersByIds200Response](docs/GetSwapOffersByIds200Response.md)
  - [GetSwapProposalsByOfferId200Response](docs/GetSwapProposalsByOfferId200Response.md)
  - [GetUserSwapOffers200Response](docs/GetUserSwapOffers200Response.md)
  - [GetUserSwapOffers200ResponseIncludedInner](docs/GetUserSwapOffers200ResponseIncludedInner.md)
  - [GetUserVouchers200Response](docs/GetUserVouchers200Response.md)
+ - [GoogleSignIn200Response](docs/GoogleSignIn200Response.md)
  - [LoginAccountRequest](docs/LoginAccountRequest.md)
  - [LoginAccountRequestAllOfAttributes](docs/LoginAccountRequestAllOfAttributes.md)
  - [LoginAccountRequestKey](docs/LoginAccountRequestKey.md)
+ - [Rate](docs/Rate.md)
+ - [RateAllOfAttributes](docs/RateAllOfAttributes.md)
+ - [RateAllOfRelationships](docs/RateAllOfRelationships.md)
+ - [RateKey](docs/RateKey.md)
  - [SearchAccounts200Response](docs/SearchAccounts200Response.md)
  - [SearchBrands200Response](docs/SearchBrands200Response.md)
  - [SearchWatches200Response](docs/SearchWatches200Response.md)

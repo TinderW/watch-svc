@@ -12,21 +12,25 @@ import AnyCodable
 
 public struct AccountLogin200Response: Codable, JSONEncodable, Hashable {
 
-    public var data: SignInResponse?
+    public var data: SignInResponse
+    public var included: [AccountLogin200ResponseIncludedInner]
 
-    public init(data: SignInResponse? = nil) {
+    public init(data: SignInResponse, included: [AccountLogin200ResponseIncludedInner]) {
         self.data = data
+        self.included = included
     }
 
     public enum CodingKeys: String, CodingKey, CaseIterable {
         case data
+        case included
     }
 
     // Encodable protocol methods
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encodeIfPresent(data, forKey: .data)
+        try container.encode(data, forKey: .data)
+        try container.encode(included, forKey: .included)
     }
 }
 

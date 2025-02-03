@@ -108,7 +108,7 @@ No authorization required
 
 # **googleSignIn**
 ```swift
-    open class func googleSignIn(tokenId: String, completion: @escaping (_ data: AccountLogin200Response?, _ error: Error?) -> Void)
+    open class func googleSignIn(tokenId: String, completion: @escaping (_ data: GoogleSignIn200Response?, _ error: Error?) -> Void)
 ```
 
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AccountLogin200Response**](AccountLogin200Response.md)
+[**GoogleSignIn200Response**](GoogleSignIn200Response.md)
 
 ### Authorization
 

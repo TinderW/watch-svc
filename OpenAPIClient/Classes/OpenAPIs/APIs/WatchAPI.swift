@@ -59,13 +59,13 @@ open class WatchAPI {
     /**
 
      - parameter accessToken: (header)  
-     - parameter account: (query)  (optional)
+     - parameter accountId: (query)  (optional)
      - parameter apiResponseQueue: The queue on which api response is dispatched.
      - parameter completion: completion handler to receive the data and the error objects
      */
     @discardableResult
-    open class func getAccountWatches(accessToken: String, account: String? = nil, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: GetAccountWatches200Response?, _ error: Error?) -> Void)) -> RequestTask {
-        return getAccountWatchesWithRequestBuilder(accessToken: accessToken, account: account).execute(apiResponseQueue) { result in
+    open class func getAccountWatches(accessToken: String, accountId: String? = nil, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: GetAccountWatches200Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return getAccountWatchesWithRequestBuilder(accessToken: accessToken, accountId: accountId).execute(apiResponseQueue) { result in
             switch result {
             case let .success(response):
                 completion(response.body, nil)
@@ -78,17 +78,17 @@ open class WatchAPI {
     /**
      - GET /integrations/watch-svc-go/account-watches/
      - parameter accessToken: (header)  
-     - parameter account: (query)  (optional)
+     - parameter accountId: (query)  (optional)
      - returns: RequestBuilder<GetAccountWatches200Response> 
      */
-    open class func getAccountWatchesWithRequestBuilder(accessToken: String, account: String? = nil) -> RequestBuilder<GetAccountWatches200Response> {
+    open class func getAccountWatchesWithRequestBuilder(accessToken: String, accountId: String? = nil) -> RequestBuilder<GetAccountWatches200Response> {
         let localVariablePath = "/integrations/watch-svc-go/account-watches/"
         let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
         let localVariableParameters: [String: Any]? = nil
 
         var localVariableUrlComponents = URLComponents(string: localVariableURLString)
         localVariableUrlComponents?.queryItems = APIHelper.mapValuesToQueryItems([
-            "account": (wrappedValue: account?.encodeToJSON(), isExplode: true),
+            "account-id": (wrappedValue: accountId?.encodeToJSON(), isExplode: true),
         ])
 
         let localVariableNillableHeaders: [String: Any?] = [

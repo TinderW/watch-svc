@@ -10,12 +10,12 @@ Method | HTTP request | Description
 
 # **getAccount**
 ```swift
-    open class func getAccount(accessToken: String, account: String? = nil, completion: @escaping (_ data: GetAccount200Response?, _ error: Error?) -> Void)
+    open class func getAccount(accessToken: String, accountId: String? = nil, completion: @escaping (_ data: GetAccount200Response?, _ error: Error?) -> Void)
 ```
 
 
 
-Returns not ouath2 account, use it in the case when the account`s refresh token was expired
+get account
 
 ### Example
 ```swift
@@ -23,9 +23,9 @@ Returns not ouath2 account, use it in the case when the account`s refresh token 
 import OpenAPIClient
 
 let accessToken = "accessToken_example" // String | 
-let account = "account_example" // String |  (optional)
+let accountId = "accountId_example" // String |  (optional)
 
-AccountAPI.getAccount(accessToken: accessToken, account: account) { (response, error) in
+AccountAPI.getAccount(accessToken: accessToken, accountId: accountId) { (response, error) in
     guard error == nil else {
         print(error)
         return
@@ -42,7 +42,7 @@ AccountAPI.getAccount(accessToken: accessToken, account: account) { (response, e
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **accessToken** | **String** |  | 
- **account** | **String** |  | [optional] 
+ **accountId** | **String** |  | [optional] 
 
 ### Return type
 
