@@ -105,4 +105,49 @@ open class AccountAPI {
 
         return localVariableRequestBuilder.init(method: "GET", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
     }
+
+    /**
+
+     - parameter accessToken: (header)  
+     - parameter setAccountLocation: (body)  
+     - parameter apiResponseQueue: The queue on which api response is dispatched.
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    @discardableResult
+    open class func setLocation(accessToken: String, setAccountLocation: SetAccountLocation, apiResponseQueue: DispatchQueue = OpenAPIClientAPI.apiResponseQueue, completion: @escaping ((_ data: SetLocation201Response?, _ error: Error?) -> Void)) -> RequestTask {
+        return setLocationWithRequestBuilder(accessToken: accessToken, setAccountLocation: setAccountLocation).execute(apiResponseQueue) { result in
+            switch result {
+            case let .success(response):
+                completion(response.body, nil)
+            case let .failure(error):
+                completion(nil, error)
+            }
+        }
+    }
+
+    /**
+     - POST /integrations/watch-svc-go/account/location
+     - set location
+     - parameter accessToken: (header)  
+     - parameter setAccountLocation: (body)  
+     - returns: RequestBuilder<SetLocation201Response> 
+     */
+    open class func setLocationWithRequestBuilder(accessToken: String, setAccountLocation: SetAccountLocation) -> RequestBuilder<SetLocation201Response> {
+        let localVariablePath = "/integrations/watch-svc-go/account/location"
+        let localVariableURLString = OpenAPIClientAPI.basePath + localVariablePath
+        let localVariableParameters = JSONEncodingHelper.encodingParameters(forEncodableObject: setAccountLocation)
+
+        let localVariableUrlComponents = URLComponents(string: localVariableURLString)
+
+        let localVariableNillableHeaders: [String: Any?] = [
+            "Content-Type": "application/json",
+            "access-token": accessToken.encodeToJSON(),
+        ]
+
+        let localVariableHeaderParameters = APIHelper.rejectNilHeaders(localVariableNillableHeaders)
+
+        let localVariableRequestBuilder: RequestBuilder<SetLocation201Response>.Type = OpenAPIClientAPI.requestBuilderFactory.getBuilder()
+
+        return localVariableRequestBuilder.init(method: "POST", URLString: (localVariableUrlComponents?.string ?? localVariableURLString), parameters: localVariableParameters, headers: localVariableHeaderParameters, requiresAuthentication: false)
+    }
 }

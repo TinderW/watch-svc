@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getAccount**](AccountAPI.md#getaccount) | **GET** /integrations/watch-svc-go/account | 
 [**searchAccounts**](AccountAPI.md#searchaccounts) | **GET** /integrations/watch-svc-go/account/search | 
+[**setLocation**](AccountAPI.md#setlocation) | **POST** /integrations/watch-svc-go/account/location | 
 
 
 # **getAccount**
@@ -106,6 +107,57 @@ No authorization required
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **setLocation**
+```swift
+    open class func setLocation(accessToken: String, setAccountLocation: SetAccountLocation, completion: @escaping (_ data: SetLocation201Response?, _ error: Error?) -> Void)
+```
+
+
+
+set location
+
+### Example
+```swift
+// The following code samples are still beta. For any issue, please report via http://github.com/OpenAPITools/openapi-generator/issues/new
+import OpenAPIClient
+
+let accessToken = "accessToken_example" // String | 
+let setAccountLocation = SetAccountLocation(type: "type_example", attributes: AccountLocation_allOf_attributes(city: "city_example", region: "region_example", country: "country_example", countryCode: "countryCode_example")) // SetAccountLocation | 
+
+AccountAPI.setLocation(accessToken: accessToken, setAccountLocation: setAccountLocation) { (response, error) in
+    guard error == nil else {
+        print(error)
+        return
+    }
+
+    if (response) {
+        dump(response)
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **accessToken** | **String** |  | 
+ **setAccountLocation** | [**SetAccountLocation**](SetAccountLocation.md) |  | 
+
+### Return type
+
+[**SetLocation201Response**](SetLocation201Response.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

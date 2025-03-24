@@ -1,10 +1,9 @@
-# SearchAccounts200Response
+# SetLocation201Response
 
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**data** | [Account] |  | 
-**included** | [SearchAccounts200ResponseIncludedInner] |  | 
+**data** | [**AccountLocation**](AccountLocation.md) |  | 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -11,11 +11,14 @@ import AnyCodable
 #endif
 
 public enum GetAccount200ResponseIncludedInner: Codable, JSONEncodable, Hashable {
+    case typeAccountLocation(AccountLocation)
     case typeBasicRating(BasicRating)
 
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         switch self {
+        case .typeAccountLocation(let value):
+            try container.encode(value)
         case .typeBasicRating(let value):
             try container.encode(value)
         }
@@ -23,7 +26,9 @@ public enum GetAccount200ResponseIncludedInner: Codable, JSONEncodable, Hashable
 
     public init(from decoder: Decoder) throws {
         let container = try decoder.singleValueContainer()
-        if let value = try? container.decode(BasicRating.self) {
+        if let value = try? container.decode(AccountLocation.self) {
+            self = .typeAccountLocation(value)
+        } else if let value = try? container.decode(BasicRating.self) {
             self = .typeBasicRating(value)
         } else {
             throw DecodingError.typeMismatch(Self.Type.self, .init(codingPath: decoder.codingPath, debugDescription: "Unable to decode instance of GetAccount200ResponseIncludedInner"))

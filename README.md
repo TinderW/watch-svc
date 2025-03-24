@@ -28,6 +28,7 @@ Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AccountAPI* | [**getAccount**](docs/AccountAPI.md#getaccount) | **GET** /integrations/watch-svc-go/account | 
 *AccountAPI* | [**searchAccounts**](docs/AccountAPI.md#searchaccounts) | **GET** /integrations/watch-svc-go/account/search | 
+*AccountAPI* | [**setLocation**](docs/AccountAPI.md#setlocation) | **POST** /integrations/watch-svc-go/account/location | 
 *AuthAPI* | [**accountLogin**](docs/AuthAPI.md#accountlogin) | **POST** /integrations/watch-svc-go/account-login | 
 *AuthAPI* | [**createAccount**](docs/AuthAPI.md#createaccount) | **POST** /integrations/watch-svc-go/account | 
 *AuthAPI* | [**googleSignIn**](docs/AuthAPI.md#googlesignin) | **POST** /integrations/watch-svc-go/oauth2/google | 
@@ -59,6 +60,10 @@ Class | Method | HTTP request | Description
  - [Account](docs/Account.md)
  - [AccountAllOfAttributes](docs/AccountAllOfAttributes.md)
  - [AccountKey](docs/AccountKey.md)
+ - [AccountLocation](docs/AccountLocation.md)
+ - [AccountLocationAllOfAttributes](docs/AccountLocationAllOfAttributes.md)
+ - [AccountLocationAllOfRelationships](docs/AccountLocationAllOfRelationships.md)
+ - [AccountLocationKey](docs/AccountLocationKey.md)
  - [AccountLogin200Response](docs/AccountLogin200Response.md)
  - [AccountLogin200ResponseIncludedInner](docs/AccountLogin200ResponseIncludedInner.md)
  - [AddWatch](docs/AddWatch.md)
@@ -100,8 +105,12 @@ Class | Method | HTTP request | Description
  - [RateAllOfRelationships](docs/RateAllOfRelationships.md)
  - [RateKey](docs/RateKey.md)
  - [SearchAccounts200Response](docs/SearchAccounts200Response.md)
+ - [SearchAccounts200ResponseIncludedInner](docs/SearchAccounts200ResponseIncludedInner.md)
  - [SearchBrands200Response](docs/SearchBrands200Response.md)
  - [SearchWatches200Response](docs/SearchWatches200Response.md)
+ - [SetAccountLocation](docs/SetAccountLocation.md)
+ - [SetAccountLocationKey](docs/SetAccountLocationKey.md)
+ - [SetLocation201Response](docs/SetLocation201Response.md)
  - [SetOfferProposalStatus](docs/SetOfferProposalStatus.md)
  - [SetOfferProposalStatusAllOfAttributes](docs/SetOfferProposalStatusAllOfAttributes.md)
  - [SetOfferProposalStatusAllOfRelationships](docs/SetOfferProposalStatusAllOfRelationships.md)

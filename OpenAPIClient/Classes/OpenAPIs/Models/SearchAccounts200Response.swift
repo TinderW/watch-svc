@@ -13,9 +13,9 @@ import AnyCodable
 public struct SearchAccounts200Response: Codable, JSONEncodable, Hashable {
 
     public var data: [Account]
-    public var included: [GetAccount200ResponseIncludedInner]
+    public var included: [SearchAccounts200ResponseIncludedInner]
 
-    public init(data: [Account], included: [GetAccount200ResponseIncludedInner]) {
+    public init(data: [Account], included: [SearchAccounts200ResponseIncludedInner]) {
         self.data = data
         self.included = included
     }
